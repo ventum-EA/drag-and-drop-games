@@ -952,6 +952,7 @@ GameObject:
   - component: {fileID: 780554598}
   - component: {fileID: 780554597}
   - component: {fileID: 780554596}
+  - component: {fileID: 780554599}
   m_Layer: 5
   m_Name: StartButton1
   m_TagString: Untagged
@@ -1085,6 +1086,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 780554594}
   m_CullTransparentMesh: 1
+--- !u!114 &780554599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780554594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f810ef91f2a0e8b4f82de3e53575ad99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonImg: {fileID: 780554597}
+  normalColor: {r: 0, g: 0, b: 0, a: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  outline: {fileID: 0}
+  glowColor: {r: 1, g: 1, b: 1, a: 1}
+  pulseSpeed: 2
+  scaleRate: 1.2
 --- !u!1 &854938996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1593,8 +1613,10 @@ GameObject:
   - component: {fileID: 1300008487}
   - component: {fileID: 1300008486}
   - component: {fileID: 1300008485}
+  - component: {fileID: 1300008489}
+  - component: {fileID: 1300008488}
   m_Layer: 5
-  m_Name: StartButton12
+  m_Name: StartButton2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1726,6 +1748,40 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1300008483}
   m_CullTransparentMesh: 1
+--- !u!114 &1300008488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300008483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1300008489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300008483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f810ef91f2a0e8b4f82de3e53575ad99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonImg: {fileID: 1300008486}
+  normalColor: {r: 0, g: 0, b: 0, a: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  outline: {fileID: 0}
+  glowColor: {r: 1, g: 1, b: 1, a: 1}
+  pulseSpeed: 2
+  scaleRate: 1.2
 --- !u!1 &1437917703
 GameObject:
   m_ObjectHideFlags: 0
@@ -2058,6 +2114,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1677458325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1677458327}
+  m_Layer: 0
+  m_Name: Sholder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1677458327
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677458325}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 776.9727, y: 622.5704, z: -5.5444}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1901103891
 GameObject:
   m_ObjectHideFlags: 0
@@ -2197,3 +2284,4 @@ SceneRoots:
   - {fileID: 1288713975}
   - {fileID: 1901103893}
   - {fileID: 24481519}
+  - {fileID: 1677458327}
