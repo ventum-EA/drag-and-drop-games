@@ -13,6 +13,7 @@ public class ObjectScript : MonoBehaviour
     [HideInInspector]
     public bool rightPlace = false;
     public GameObject lastDragged = null;
+    public bool drag = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
