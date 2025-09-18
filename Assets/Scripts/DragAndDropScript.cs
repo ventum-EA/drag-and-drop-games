@@ -31,11 +31,12 @@ public class DragAndDropScript : MonoBehaviour, IDragHandler, IBeginDragHandler,
     {
         if ((Input.GetMouseButton(0) && !Input.GetMouseButtonDown(1) && !Input.GetMouseButtonDown(2)))
         {
+            ObjectScript.drag = true;
             objectScr.lastDragged = null;
             canvasGro.blocksRaycasts = false;
             canvasGro.alpha = 0.6f;
             // rectTra.SetAsLastSibling();
-            int positionIndex = transform.parent.childCount - 1;
+            int positionIndex = transform.parent.childCount - 2;
             transform.SetSiblingIndex(positionIndex);
 
             Vector3 cursorWorldPos = Camera.main.ScreenToWorldPoint(new Vector3 (Input.mousePosition.x,Input.mousePosition.y, screenBou.screenPoint.z));
@@ -58,7 +59,7 @@ public class DragAndDropScript : MonoBehaviour, IDragHandler, IBeginDragHandler,
     {
         if (Input.GetMouseButtonUp(0))
         {
-            
+            ObjectScript.drag = false;
             canvasGro.blocksRaycasts = true;
             canvasGro.alpha = 1.0f;
             if(objectScr.rightPlace)
