@@ -15,6 +15,8 @@ public class ObstaclesSpawnScript : MonoBehaviour
 
     public float obstacleMinSpeed = 2f;
     public float obstacleMaxSpeed = 200f;
+    private bool isExploding;
+
     void Start()
     {
         InvokeRepeating(nameof(SpawnCloud), 0f, cloudSpawnInterval);
