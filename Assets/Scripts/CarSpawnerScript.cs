@@ -20,8 +20,8 @@ public class CarSpawnerScript : MonoBehaviour
      
             GameObject newCar = Instantiate(car, spawnPosition, Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
             newCar.transform.SetParent(canv.transform);
-            newCar.AddComponent<ScreenBoundriesScript>();
-            newCar.AddComponent<ObjectScript>();
+            newCar.GetComponent<DragAndDropScript>().objectScr = objScr;
+            newCar.GetComponent<DragAndDropScript>().screenBou = screenBoundries;
         }
     }
     void Start()
