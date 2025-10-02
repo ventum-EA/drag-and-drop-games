@@ -2369,6 +2369,8 @@ MonoBehaviour:
   - {fileID: 1862501342}
   - {fileID: 517065696}
   screenBoundries: {fileID: 1424380896}
+  objScr: {fileID: 1424380894}
+  canv: {fileID: 1599007824}
 --- !u!1 &1457893226
 GameObject:
   m_ObjectHideFlags: 0
