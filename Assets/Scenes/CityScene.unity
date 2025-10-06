@@ -2323,6 +2323,7 @@ MonoBehaviour:
   - {fileID: 2126433342818340550, guid: 121a505404f533b4483f2c773c222f57, type: 3}
   - {fileID: 2091787110814085480, guid: 1c6a67cc3fbe2f44abeaf14496a03c32, type: 3}
   - {fileID: 7399235269692383258, guid: 96d26843c8737a24fba460924c023b4d, type: 3}
+  - {fileID: 3845918165217599477, guid: fd2b8f3d461d9a6428a1227a9aae3d2d, type: 3}
   spawnPoint: {fileID: 760233199}
   cloudSpawnInterval: 3
   obstacleSpawnInterval: 2
