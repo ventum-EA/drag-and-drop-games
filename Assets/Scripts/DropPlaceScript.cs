@@ -6,7 +6,9 @@ public class DropPlaceScript : MonoBehaviour, IDropHandler
     private float placeZRot, vehicleZRot, rotDiff;
     private Vector3 placeSize, vehicleSize;
     private float xSizeDiff, ySizeDiff;
-    public ObjectScript objScript;  
+    public ObjectScript objScript;
+    public int carCount;
+    public int points=0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     
    public void OnDrop(PointerEventData eventData) {
@@ -30,7 +32,9 @@ public class DropPlaceScript : MonoBehaviour, IDropHandler
                 {
                     Debug.Log("Correct place");
                     objScript.rightPlace = true;
-
+                    points += 1;
+                    Debug.Log("Points: "+points);
+                    carCount -= 1;
                     eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
                     eventData.pointerDrag.GetComponent<RectTransform>().localRotation = GetComponent<RectTransform>().localRotation;
                     eventData.pointerDrag.GetComponent<RectTransform>().localScale = GetComponent<RectTransform>().localScale;
@@ -38,6 +42,7 @@ public class DropPlaceScript : MonoBehaviour, IDropHandler
                     {
                         case "Garbage":
                             objScript.effects.PlayOneShot(objScript.audioCli[2]);
+                            
                             break;
 
                         case "Medicine":
@@ -78,6 +83,8 @@ public class DropPlaceScript : MonoBehaviour, IDropHandler
 
                             break;
                     }
+                    
+                    
                 }
             }
             else
@@ -135,7 +142,7 @@ public class DropPlaceScript : MonoBehaviour, IDropHandler
     
     void Start()
     {
-        
+        carCount = objScript.vehicles.Length;  
     }
 
     // Update is called once per frame
