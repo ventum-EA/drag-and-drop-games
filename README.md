@@ -16,3 +16,6 @@ Unity 2D Drag And Drop games for children
 - [ ] Create game timer (HH:MM:SS)
 - [ ] Add animated clouds, vehicles, people, animals etc.
 - [ ] Add flying obstacles
+- [ ] Winning logic
+- [ ] Random car logic
+- [ ] 
