@@ -9,6 +9,8 @@ public class DropPlaceScript : MonoBehaviour, IDropHandler
     public ObjectScript objScript;
     public int carCount;
     public int points=0;
+    public GameObject carsSpace;
+    public int realCarCount = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     
    public void OnDrop(PointerEventData eventData) {
@@ -33,8 +35,9 @@ public class DropPlaceScript : MonoBehaviour, IDropHandler
                     Debug.Log("Correct place");
                     objScript.rightPlace = true;
                     points += 1;
+                  
                     Debug.Log("Points: "+points);
-                    carCount -= 1;
+                    
                     eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
                     eventData.pointerDrag.GetComponent<RectTransform>().localRotation = GetComponent<RectTransform>().localRotation;
                     eventData.pointerDrag.GetComponent<RectTransform>().localScale = GetComponent<RectTransform>().localScale;
@@ -148,6 +151,7 @@ public class DropPlaceScript : MonoBehaviour, IDropHandler
     // Update is called once per frame
     void Update()
     {
-        
+        if(carsSpace!=null)
+        carCount = carsSpace.transform.childCount;
     }
 }

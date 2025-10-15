@@ -630,6 +630,8 @@ MonoBehaviour:
   objScript: {fileID: 1424380894}
   carCount: 0
   points: 0
+  carsSpace: {fileID: 0}
+  realCarCount: 0
 --- !u!1 &284889988
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,6 +852,8 @@ MonoBehaviour:
   objScript: {fileID: 1424380894}
   carCount: 0
   points: 0
+  carsSpace: {fileID: 0}
+  realCarCount: 0
 --- !u!1 &456560809
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,6 +1034,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 470046251}
   m_CullTransparentMesh: 1
+--- !u!1 &506404533
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 506404534}
+  m_Layer: 0
+  m_Name: CarHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &506404534
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506404533}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1599007825}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &514485206
 GameObject:
   m_ObjectHideFlags: 0
@@ -1064,7 +1099,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6, y: 14}
+  m_AnchoredPosition: {x: 24.05, y: 14}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &514485208
@@ -1257,6 +1292,8 @@ MonoBehaviour:
   objScript: {fileID: 1424380894}
   carCount: 0
   points: 0
+  carsSpace: {fileID: 0}
+  realCarCount: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1407,8 +1444,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ba003c438e420e4988f44c630f310b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxZoom: 300
-  minZoom: 150
+  maxZoom: 500
+  minZoom: 50
   panSpeed: 6
   cam: {fileID: 519420031}
 --- !u!1 &619394800
@@ -1586,6 +1623,8 @@ MonoBehaviour:
   objScript: {fileID: 1424380894}
   carCount: 0
   points: 0
+  carsSpace: {fileID: 0}
+  realCarCount: 0
 --- !u!1 &663097453
 GameObject:
   m_ObjectHideFlags: 0
@@ -1752,6 +1791,8 @@ MonoBehaviour:
   objScript: {fileID: 1424380894}
   carCount: 0
   points: 0
+  carsSpace: {fileID: 0}
+  realCarCount: 0
 --- !u!1 &760233198
 GameObject:
   m_ObjectHideFlags: 0
@@ -2089,6 +2130,8 @@ MonoBehaviour:
   objScript: {fileID: 1424380894}
   carCount: 0
   points: 0
+  carsSpace: {fileID: 0}
+  realCarCount: 0
 --- !u!1 &893807923
 GameObject:
   m_ObjectHideFlags: 0
@@ -2433,6 +2476,8 @@ MonoBehaviour:
   objScript: {fileID: 1424380894}
   carCount: 0
   points: 0
+  carsSpace: {fileID: 0}
+  realCarCount: 0
 --- !u!1 &1153393084
 GameObject:
   m_ObjectHideFlags: 0
@@ -2636,6 +2681,8 @@ MonoBehaviour:
   objScript: {fileID: 1424380894}
   carCount: 0
   points: 0
+  carsSpace: {fileID: 0}
+  realCarCount: 0
 --- !u!1 &1271207832
 GameObject:
   m_ObjectHideFlags: 0
@@ -3200,8 +3247,8 @@ MonoBehaviour:
   - {fileID: 1862501342}
   - {fileID: 517065696}
   screenBoundries: {fileID: 1424380896}
-  objScr: {fileID: 0}
-  canv: {fileID: 1599007824}
+  objScr: {fileID: 1424380894}
+  canv: {fileID: 506404533}
 --- !u!114 &1424380902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3217,6 +3264,8 @@ MonoBehaviour:
   objScript: {fileID: 1424380894}
   carCount: 0
   points: 0
+  carsSpace: {fileID: 506404533}
+  realCarCount: 0
 --- !u!114 &1424380903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3240,6 +3289,7 @@ MonoBehaviour:
   - {fileID: 470046251}
   - {fileID: 1924946566}
   starCount: 0
+  win: 0
 --- !u!1 &1457893226
 GameObject:
   m_ObjectHideFlags: 0
@@ -8484,6 +8534,8 @@ MonoBehaviour:
   objScript: {fileID: 1424380894}
   carCount: 0
   points: 0
+  carsSpace: {fileID: 0}
+  realCarCount: 0
 --- !u!1 &1599007821
 GameObject:
   m_ObjectHideFlags: 0
@@ -8598,8 +8650,9 @@ RectTransform:
   - {fileID: 149152933}
   - {fileID: 456560810}
   - {fileID: 2048185256}
-  - {fileID: 760233199}
   - {fileID: 893807924}
+  - {fileID: 506404534}
+  - {fileID: 760233199}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -8969,6 +9022,8 @@ MonoBehaviour:
   objScript: {fileID: 1424380894}
   carCount: 0
   points: 0
+  carsSpace: {fileID: 0}
+  realCarCount: 0
 --- !u!1 &1862501342
 GameObject:
   m_ObjectHideFlags: 0
@@ -9060,6 +9115,8 @@ MonoBehaviour:
   objScript: {fileID: 1424380894}
   carCount: 0
   points: 0
+  carsSpace: {fileID: 0}
+  realCarCount: 0
 --- !u!1 &1924946566
 GameObject:
   m_ObjectHideFlags: 0
@@ -14059,6 +14116,8 @@ MonoBehaviour:
   objScript: {fileID: 1424380894}
   carCount: 0
   points: 0
+  carsSpace: {fileID: 0}
+  realCarCount: 0
 --- !u!1 &2035944506
 GameObject:
   m_ObjectHideFlags: 0

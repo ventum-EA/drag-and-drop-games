@@ -12,7 +12,7 @@ public class WinningScript : MonoBehaviour
     public GameObject winPoints;
     public GameObject[] stars;
     public int starCount=0;
-
+    public bool win = false;
     // Update is called once per frame
     private void Awake()
     {
@@ -25,9 +25,9 @@ public class WinningScript : MonoBehaviour
     }
     void Update()
     {
-        if (timerScript != null && DropPlaceScript!=null)
+        if (timerScript != null && DropPlaceScript!=null && !win)
         {
-            if (DropPlaceScript.carCount < 1)
+            if (DropPlaceScript.carCount-DropPlaceScript.points < 1)
             {
                 end = true;
             }  
@@ -36,6 +36,7 @@ public class WinningScript : MonoBehaviour
 
         if (end)
         {
+            winPanel.transform.SetAsLastSibling();
             timerScript.timerOn = false;
             winPanel.SetActive(true);
             float winSeconds = timerScript.timeSeconds;
@@ -63,7 +64,8 @@ public class WinningScript : MonoBehaviour
             {
                 stars[i].GetComponent<UnityEngine.UI.Image>().color  = new Color(1f,1f,1f);
             }
-          
+            end = false;
+            win = true;
         }
     }
 }

@@ -6,7 +6,7 @@ public class CarSpawnerScript : MonoBehaviour
     public GameObject[] carHolders;
     public ScreenBoundriesScript screenBoundries;
     public ObjectScript objScr;
-    public Canvas canv;
+    public GameObject canv;
     Vector3 spawnPosition;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
