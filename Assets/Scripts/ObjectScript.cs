@@ -16,6 +16,7 @@ public class ObjectScript : MonoBehaviour
     public GameObject lastDragged = null;
     public static bool drag = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Awake()
     {
         

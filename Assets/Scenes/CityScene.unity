@@ -3051,6 +3051,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 99bbee16475fdb147bda2007433200e0, type: 3}
   - {fileID: 8300000, guid: fdfaff6094c1bb844a16c09bc25ea749, type: 3}
   - {fileID: 8300000, guid: 879591c08f0855044a654c5164f674e7, type: 3}
+  - {fileID: 8300000, guid: cc1b8c72ba68def47ad33b3e1c66a923, type: 3}
   rightPlace: 0
   lastDragged: {fileID: 0}
 --- !u!4 &1424380895
@@ -3144,11 +3145,13 @@ MonoBehaviour:
   - {fileID: 3999926429856222854, guid: c89a779547c530b46aad393fa9cd4f9e, type: 3}
   - {fileID: 5905433815554596990, guid: 49beba153a6cb714089732b8db265778, type: 3}
   - {fileID: 1613171452667756935, guid: 0328d7c3fb8221c4d8e5670d1f2637b3, type: 3}
+  - {fileID: 1359176450356555968, guid: 15131e7eaf1045d478caa60d129b343d, type: 3}
   obstaclesPrefabs:
   - {fileID: 4919465113193585354, guid: f25fd27f83577f749a233f6a5e1fa38f, type: 3}
   - {fileID: 2126433342818340550, guid: 121a505404f533b4483f2c773c222f57, type: 3}
   - {fileID: 2091787110814085480, guid: 1c6a67cc3fbe2f44abeaf14496a03c32, type: 3}
   - {fileID: 7399235269692383258, guid: 96d26843c8737a24fba460924c023b4d, type: 3}
+  - {fileID: 3845918165217599477, guid: fd2b8f3d461d9a6428a1227a9aae3d2d, type: 3}
   spawnPoint: {fileID: 760233199}
   cloudSpawnInterval: 3
   obstacleSpawnInterval: 2
@@ -3197,7 +3200,7 @@ MonoBehaviour:
   - {fileID: 1862501342}
   - {fileID: 517065696}
   screenBoundries: {fileID: 1424380896}
-  objScr: {fileID: 1424380894}
+  objScr: {fileID: 0}
   canv: {fileID: 1599007824}
 --- !u!114 &1424380902
 MonoBehaviour:
