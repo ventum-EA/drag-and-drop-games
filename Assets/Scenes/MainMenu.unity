@@ -829,8 +829,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1182037526}
   - {fileID: 458344608}
+  - {fileID: 1182037526}
   - {fileID: 854938997}
   - {fileID: 780554595}
   - {fileID: 1300008484}
@@ -7011,7 +7011,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: ac57fc240486df049b0b125553ccdf17, type: 3}
   m_Resource: {fileID: 8300000, guid: ac57fc240486df049b0b125553ccdf17, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.81
   m_Pitch: 1
   Loop: 1
   Mute: 0

@@ -10,6 +10,7 @@ public class WinningScript : MonoBehaviour
     public GameObject winPanel;
     public GameObject winTime;
     public GameObject winPoints;
+    public int pointsAmount = 0;
     public GameObject[] stars;
     public int starCount=0;
     public bool win = false;
@@ -27,14 +28,14 @@ public class WinningScript : MonoBehaviour
     {
         if (timerScript != null && DropPlaceScript!=null && !win)
         {
-            if (DropPlaceScript.carCount-DropPlaceScript.points < 1)
+            if (DropPlaceScript.carCount-pointsAmount < 1)
             {
                 end = true;
             }  
         }
 
 
-        if (end)
+        if (end && !win)
         {
             winPanel.transform.SetAsLastSibling();
             timerScript.timerOn = false;
@@ -47,8 +48,8 @@ public class WinningScript : MonoBehaviour
                 if (winMinutes >= 60) { winHours += 1; winMinutes = 0; }
             }while(winSeconds>=60 || winMinutes>=60);
             winTime.GetComponent<TMP_Text>().text = string.Format("{0}h {1:00}m {2:00.00}s", winHours, winMinutes, System.Math.Round(winSeconds, 2));
-            winPoints.GetComponent<TMP_Text>().text ="Points: "+ DropPlaceScript.points.ToString()+"/12";
-            if (DropPlaceScript.points == 12)
+            winPoints.GetComponent<TMP_Text>().text ="Points: "+ pointsAmount.ToString()+"/12";
+            if (pointsAmount == 12)
             {
                 starCount += 1;
             }
@@ -56,7 +57,7 @@ public class WinningScript : MonoBehaviour
             {
                 starCount += 1;
             }
-            if(DropPlaceScript.points==12 && winSeconds <= 240)
+            if(pointsAmount==12 && winSeconds <= 240)
             {
                 starCount += 1;
             }

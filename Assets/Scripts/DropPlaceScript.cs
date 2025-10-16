@@ -1,3 +1,6 @@
+using NUnit.Framework;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -8,12 +11,13 @@ public class DropPlaceScript : MonoBehaviour, IDropHandler
     private float xSizeDiff, ySizeDiff;
     public ObjectScript objScript;
     public int carCount;
-    public int points=0;
     public GameObject carsSpace;
     public int realCarCount = 0;
+    public List<GameObject> realCars;
+    public WinningScript winScript;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    
-   public void OnDrop(PointerEventData eventData) {
+
+    public void OnDrop(PointerEventData eventData) {
         Debug.Log("[INFO] OnDrop ZERO");
         if (eventData.pointerDrag!=null && Input.GetMouseButtonUp(0) && !Input.GetMouseButton(1) && !Input.GetMouseButton(2))
         {
@@ -34,9 +38,9 @@ public class DropPlaceScript : MonoBehaviour, IDropHandler
                 {
                     Debug.Log("Correct place");
                     objScript.rightPlace = true;
-                    points += 1;
+                    winScript.pointsAmount++;
                   
-                    Debug.Log("Points: "+points);
+                    Debug.Log("Points: "+winScript.pointsAmount);
                     
                     eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
                     eventData.pointerDrag.GetComponent<RectTransform>().localRotation = GetComponent<RectTransform>().localRotation;
@@ -95,49 +99,21 @@ public class DropPlaceScript : MonoBehaviour, IDropHandler
                 Debug.Log("Wrong place");
                 objScript.rightPlace = false;
                 objScript.effects.PlayOneShot(objScript.audioCli[1]);
-                switch (eventData.pointerDrag.tag)
+         
+                bool found = false;
+                for (int i = 0; i < realCars.Count; i++)
                 {
-                    case "Garbage":
-                        objScript.vehicles[0].GetComponent<RectTransform>().localPosition = objScript.startCoordinates[0];
+                    if (realCars[i] != null && realCars[i].tag == eventData.pointerDrag.tag)
+                    {
+                        realCars[i].GetComponent<RectTransform>().localPosition = objScript.startCoordinates[i];
+                        Debug.Log(objScript.startCoordinates[i]);
+                        found = true;
                         break;
-
-                    case "Medicine":
-                        objScript.vehicles[1].GetComponent<RectTransform>().localPosition = objScript.startCoordinates[1];
-                        break;
-                    case "Fire":
-                        objScript.vehicles[2].GetComponent<RectTransform>().localPosition = objScript.startCoordinates[2];
-                        break;
-                    case "School":
-                        objScript.vehicles[3].GetComponent<RectTransform>().localPosition = objScript.startCoordinates[3];
-                        break;
-                    case "B2":
-                        objScript.vehicles[4].GetComponent<RectTransform>().localPosition = objScript.startCoordinates[4];
-                        break;
-                    case "Cement":
-                        objScript.vehicles[5].GetComponent<RectTransform>().localPosition = objScript.startCoordinates[5];
-                        break;
-                    case "e46":
-                        objScript.vehicles[6].GetComponent<RectTransform>().localPosition = objScript.startCoordinates[6];
-                        break;
-                    case "e61":
-                        objScript.vehicles[7].GetComponent<RectTransform>().localPosition = objScript.startCoordinates[7];
-                        break;
-                    case "Excavator":
-                        objScript.vehicles[8].GetComponent<RectTransform>().localPosition = objScript.startCoordinates[8];
-                        break;
-                    case "Police":
-                        objScript.vehicles[9].GetComponent<RectTransform>().localPosition = objScript.startCoordinates[9];
-                        break;
-                    case "Tractor1":
-                        objScript.vehicles[10].GetComponent<RectTransform>().localPosition = objScript.startCoordinates[10];
-                        break;
-                    case "Tractor5":
-                        objScript.vehicles[11].GetComponent<RectTransform>().localPosition = objScript.startCoordinates[11];
-                        break;
-                    default:
-                        Debug.Log("Unknown tag detected");
-
-                        break;
+                    }
+                }
+                if (!found)
+                {
+                    Debug.Log("Unknown tag detected");
                 }
             }
         }
@@ -145,13 +121,24 @@ public class DropPlaceScript : MonoBehaviour, IDropHandler
     
     void Start()
     {
-        carCount = objScript.vehicles.Length;  
+     
+        carCount = objScript.vehicles.Length;
+       
+            int childCount = carsSpace.transform.childCount;
+            
+            for (int i = 0; i < childCount; i++)
+            {
+                realCars.Add(carsSpace.transform.GetChild(i).gameObject);
+            }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(carsSpace!=null)
-        carCount = carsSpace.transform.childCount;
+        if (carsSpace)
+        {
+            carCount = carsSpace.transform.childCount;
+        }
     }
 }
