@@ -629,9 +629,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objScript: {fileID: 1424380894}
   carCount: 0
-  points: 0
-  carsSpace: {fileID: 0}
+  carsSpace: {fileID: 506404533}
   realCarCount: 0
+  realCars: []
+  winScript: {fileID: 1424380903}
 --- !u!1 &284889988
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,9 +852,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objScript: {fileID: 1424380894}
   carCount: 0
-  points: 0
-  carsSpace: {fileID: 0}
+  carsSpace: {fileID: 506404533}
   realCarCount: 0
+  realCars: []
+  winScript: {fileID: 1424380903}
 --- !u!1 &456560809
 GameObject:
   m_ObjectHideFlags: 0
@@ -1291,9 +1293,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objScript: {fileID: 1424380894}
   carCount: 0
-  points: 0
-  carsSpace: {fileID: 0}
+  carsSpace: {fileID: 506404533}
   realCarCount: 0
+  realCars: []
+  winScript: {fileID: 1424380903}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,9 +1625,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objScript: {fileID: 1424380894}
   carCount: 0
-  points: 0
-  carsSpace: {fileID: 0}
+  carsSpace: {fileID: 506404533}
   realCarCount: 0
+  realCars: []
+  winScript: {fileID: 1424380903}
 --- !u!1 &663097453
 GameObject:
   m_ObjectHideFlags: 0
@@ -1790,9 +1794,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objScript: {fileID: 1424380894}
   carCount: 0
-  points: 0
-  carsSpace: {fileID: 0}
+  carsSpace: {fileID: 506404533}
   realCarCount: 0
+  realCars: []
+  winScript: {fileID: 1424380903}
 --- !u!1 &760233198
 GameObject:
   m_ObjectHideFlags: 0
@@ -2129,9 +2134,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objScript: {fileID: 1424380894}
   carCount: 0
-  points: 0
-  carsSpace: {fileID: 0}
+  carsSpace: {fileID: 506404533}
   realCarCount: 0
+  realCars: []
+  winScript: {fileID: 1424380903}
 --- !u!1 &893807923
 GameObject:
   m_ObjectHideFlags: 0
@@ -2475,9 +2481,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objScript: {fileID: 1424380894}
   carCount: 0
-  points: 0
-  carsSpace: {fileID: 0}
+  carsSpace: {fileID: 506404533}
   realCarCount: 0
+  realCars: []
+  winScript: {fileID: 1424380903}
 --- !u!1 &1153393084
 GameObject:
   m_ObjectHideFlags: 0
@@ -2680,9 +2687,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objScript: {fileID: 1424380894}
   carCount: 0
-  points: 0
-  carsSpace: {fileID: 0}
+  carsSpace: {fileID: 506404533}
   realCarCount: 0
+  realCars: []
+  winScript: {fileID: 1424380903}
 --- !u!1 &1271207832
 GameObject:
   m_ObjectHideFlags: 0
@@ -3263,9 +3271,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objScript: {fileID: 1424380894}
   carCount: 0
-  points: 0
   carsSpace: {fileID: 506404533}
   realCarCount: 0
+  realCars: []
+  winScript: {fileID: 1424380903}
 --- !u!114 &1424380903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3284,6 +3293,7 @@ MonoBehaviour:
   winPanel: {fileID: 893807923}
   winTime: {fileID: 804301289}
   winPoints: {fileID: 514485206}
+  pointsAmount: 0
   stars:
   - {fileID: 899064397}
   - {fileID: 470046251}
@@ -8533,9 +8543,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objScript: {fileID: 1424380894}
   carCount: 0
-  points: 0
-  carsSpace: {fileID: 0}
+  carsSpace: {fileID: 506404533}
   realCarCount: 0
+  realCars: []
+  winScript: {fileID: 1424380903}
 --- !u!1 &1599007821
 GameObject:
   m_ObjectHideFlags: 0
@@ -9021,9 +9032,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objScript: {fileID: 1424380894}
   carCount: 0
-  points: 0
-  carsSpace: {fileID: 0}
+  carsSpace: {fileID: 506404533}
   realCarCount: 0
+  realCars: []
+  winScript: {fileID: 1424380903}
 --- !u!1 &1862501342
 GameObject:
   m_ObjectHideFlags: 0
@@ -9114,9 +9126,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objScript: {fileID: 1424380894}
   carCount: 0
-  points: 0
-  carsSpace: {fileID: 0}
+  carsSpace: {fileID: 506404533}
   realCarCount: 0
+  realCars: []
+  winScript: {fileID: 1424380903}
 --- !u!1 &1924946566
 GameObject:
   m_ObjectHideFlags: 0
@@ -14115,9 +14128,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objScript: {fileID: 1424380894}
   carCount: 0
-  points: 0
-  carsSpace: {fileID: 0}
+  carsSpace: {fileID: 506404533}
   realCarCount: 0
+  realCars: []
+  winScript: {fileID: 1424380903}
 --- !u!1 &2035944506
 GameObject:
   m_ObjectHideFlags: 0
