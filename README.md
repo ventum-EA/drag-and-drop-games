@@ -31,4 +31,5 @@ Screenshots:
 - [ ] Add flying obstacles
 - [ ] Winning logic
 - [ ] Random car logic
-- [ ] 
+- [ ] Change target platform to Android
+- [ ] Replace all mouse input with touch

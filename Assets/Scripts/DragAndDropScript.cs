@@ -11,6 +11,10 @@ public class DragAndDropScript : MonoBehaviour, IDragHandler, IBeginDragHandler,
     public ObjectScript objectScr;
     public ScreenBoundriesScript screenBou;
 
+    private Vector3 dragOffsetWorld;
+    private Camera uiCamera;
+    private Canvas canvas;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,17 +24,15 @@ public class DragAndDropScript : MonoBehaviour, IDragHandler, IBeginDragHandler,
     }
     public void OnPointerDown(PointerEventData eventData)
     {
-        if((Input.GetMouseButton(0) && !Input.GetMouseButtonDown(1) && !Input.GetMouseButtonDown(2))) 
-        {
+
             Debug.Log("OnPointerDown");
             objectScr.effects.PlayOneShot(objectScr.audioCli[0]);
-        }
+        
         
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if ((Input.GetMouseButton(0) && !Input.GetMouseButtonDown(1) && !Input.GetMouseButtonDown(2)))
-        {
+  
             ObjectScript.drag = true;
             objectScr.lastDragged = null;
             canvasGro.blocksRaycasts = false;
@@ -39,21 +41,29 @@ public class DragAndDropScript : MonoBehaviour, IDragHandler, IBeginDragHandler,
             int positionIndex = transform.parent.childCount - 2;
             transform.SetSiblingIndex(positionIndex);
 
-            Vector3 cursorWorldPos = Camera.main.ScreenToWorldPoint(new Vector3 (Input.mousePosition.x,Input.mousePosition.y, screenBou.screenPoint.z));
-            rectTra.position = cursorWorldPos;
-            screenBou.screenPoint = Camera.main.WorldToScreenPoint(rectTra.localPosition);
-            screenBou.offset = rectTra.localPosition - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y,screenBou.screenPoint.z));
-            objectScr.lastDragged = eventData.pointerDrag;
+        Vector3 pointerWorld;
+        if(ScreenPointToWorld(eventData.position, out pointerWorld))
+        {
+            dragOffsetWorld = rectTra.position - pointerWorld;
         }
+        else
+        {
+            dragOffsetWorld = Vector3.zero;
+        }
+        objectScr.lastDragged = eventData.pointerDrag;
+
     }
     public void OnDrag(PointerEventData eventData)
     {
-        if ((Input.GetMouseButton(0) && !Input.GetMouseButtonDown(1) && !Input.GetMouseButtonDown(2)))
-        {
-            Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenBou.screenPoint.z);
-            Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + screenBou.offset;
-            rectTra.position = screenBou.GetClampedPosition(curPosition);
-        }
+        Vector3 pointerWorld;
+        if (!ScreenPointToWorld(eventData.position, out pointerWorld))
+            return;
+        Vector3 desired = pointerWorld + dragOffsetWorld;
+        desired.z = rectTra.position.z;
+        screenBou.RecalculateBounds();
+
+        Vector2 clamped = screenBou.GetClampedPosition(desired);
+        transform.position = new Vector3(clamped.x, clamped.y, desired.z);
     }
     public void OnEndDrag(PointerEventData eventData)
     {
@@ -75,5 +85,33 @@ public class DragAndDropScript : MonoBehaviour, IDragHandler, IBeginDragHandler,
     void Update()
     {
         
+    }
+    void Awake()
+    {
+        if (objectScr == null)
+        {
+            objectScr = Object.FindFirstObjectByType<ObjectScript>();
+
+        }
+        if(screenBou == null)
+        {
+            screenBou = Object.FindFirstObjectByType<ScreenBoundriesScript>();
+        }
+        canvas = GetComponentInParent<Canvas>();
+        if (canvas != null)
+        {
+            uiCamera = canvas.worldCamera;
+        }
+    }
+
+    private bool ScreenPointToWorld(Vector2 screenPoint, out Vector3 worldPoint)
+    {
+        worldPoint = Vector3.zero;
+        if (uiCamera != null)
+            return false;
+        float z = Mathf.Abs(uiCamera.transform.position.z - rectTra.position.z);
+        Vector3 sp = new Vector3(screenPoint.x, screenPoint.y, z);
+        worldPoint = uiCamera.ScreenToWorldPoint(sp);
+        return true;
     }
 }
