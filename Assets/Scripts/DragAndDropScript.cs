@@ -111,7 +111,7 @@ public class DragAndDropScript : MonoBehaviour, IDragHandler, IBeginDragHandler,
             return false;
         float z = Mathf.Abs(uiCamera.transform.position.z - rectTra.position.z);
         Vector3 sp = new Vector3(screenPoint.x, screenPoint.y, z);
-        worldPoint = uiCamera.ScreenToWorldPoint(sp);
+        worldPoint = uiCamera.ScreenToWorldPoint(sp);   
         return true;
     }
 }
