@@ -16,11 +16,11 @@ public class TransformationScript : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Z))
             {
-                objScript.lastDragged.GetComponent<Transform>().transform.Rotate(0, 0, Time.deltaTime * 15f);
+                objScript.lastDragged.GetComponent<Transform>().transform.Rotate(0, 0, Time.deltaTime * 40f);
             }
             if (Input.GetKey(KeyCode.X))
             {
-                objScript.lastDragged.GetComponent<Transform>().transform.Rotate(0, 0, Time.deltaTime * -15f);
+                objScript.lastDragged.GetComponent<Transform>().transform.Rotate(0, 0, Time.deltaTime * -40f);
             }
                 if (Input.GetKey(KeyCode.UpArrow))
                 {

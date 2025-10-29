@@ -95,7 +95,12 @@ public class ObstacleControllerScript : MonoBehaviour
         {
             animator.SetBool("explode", true);
         }
-
+        if (objectScript.lastDragged && ObjectScript.drag)
+        {
+            StartCoroutine(ShrinkAndDestroy(objectScript.lastDragged, 0.5f));
+            objectScript.lastDragged = null;
+            ObjectScript.drag = false;
+        }
         image.color = Color.red;
         StartCoroutine(RecoverColor(0.4f));
         StartCoroutine(Vibrate());

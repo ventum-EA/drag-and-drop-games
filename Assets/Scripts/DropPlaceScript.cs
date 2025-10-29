@@ -119,18 +119,20 @@ public class DropPlaceScript : MonoBehaviour, IDropHandler
         }
     }
     
-    void Start()
+   private void Awake()
     {
-     
-        carCount = objScript.vehicles.Length;
-       
+
+
+        if (carsSpace)
+        {
             int childCount = carsSpace.transform.childCount;
-            
+
             for (int i = 0; i < childCount; i++)
             {
                 realCars.Add(carsSpace.transform.GetChild(i).gameObject);
             }
-        
+            carCount = carsSpace.transform.childCount;
+        }
     }
 
     // Update is called once per frame

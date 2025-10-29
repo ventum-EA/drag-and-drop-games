@@ -15,7 +15,8 @@ public class ObjectScript : MonoBehaviour
     public bool rightPlace = false;
     public GameObject lastDragged = null;
     public static bool drag = false;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public DropPlaceScript dropPlaceScript;
+    // Start is called once before the first execution of Upd   ate after the MonoBehaviour is created
 
     void Awake()
     {
@@ -24,14 +25,15 @@ public class ObjectScript : MonoBehaviour
     }
     void Start()
     {
-        if (!vehicles.IsUnityNull())
+        if (!dropPlaceScript.realCars.IsUnityNull())
         {
-            startCoordinates = new Vector2[vehicles.Length];
-            for (int i = 0; i < vehicles.Length; i++)
+            startCoordinates = new Vector2[dropPlaceScript.realCars.Count];
+            for (int i = 0; i < dropPlaceScript.realCars.Count; i++)
             {
-                startCoordinates[i] = vehicles[i].GetComponent<RectTransform>().localPosition;
+                startCoordinates[i] = dropPlaceScript.realCars[i].GetComponent<RectTransform>().localPosition;
             }
         }
+        Debug.Log(startCoordinates);
         
     }
 
