@@ -17,7 +17,7 @@ public class TransformationScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (objScript.lastDragged != null)
+        if (objScript.lastDragged == null)
         {
             return;
         }

@@ -67,8 +67,7 @@ public class DragAndDropScript : MonoBehaviour, IDragHandler, IBeginDragHandler,
     }
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (Input.GetMouseButtonUp(0))
-        {
+     
             ObjectScript.drag = false;
             canvasGro.blocksRaycasts = true;
             canvasGro.alpha = 1.0f;
@@ -78,7 +77,7 @@ public class DragAndDropScript : MonoBehaviour, IDragHandler, IBeginDragHandler,
                 objectScr.lastDragged = null;
             }
             objectScr.rightPlace = false;
-        }
+        
     }
             
     // Update is called once per frame - 2 frames - 3 frames - 4 frames - 5 frames - 6 frames
