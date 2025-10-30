@@ -83,7 +83,7 @@ public class DropPlaceScript : MonoBehaviour, IDropHandler
                             objScript.effects.PlayOneShot(objScript.audioCli[12]);
                             break;
                         case "Tractor5":
-                            objScript.effects.PlayOneShot(objScript.audioCli[13]);
+                            objScript.effects.PlayOneShot(objScript.audioCli[12]);
                             break;
                         default:
                             Debug.Log("Unknown tag detected");
@@ -101,8 +101,10 @@ public class DropPlaceScript : MonoBehaviour, IDropHandler
                 objScript.effects.PlayOneShot(objScript.audioCli[1]);
          
                 bool found = false;
+                Debug.Log("[DEBUG] RealCars.count" + realCars.Count);
                 for (int i = 0; i < realCars.Count; i++)
                 {
+                    Debug.Log("[DEBUG] RealCars[i] tag: "+realCars[i].tag);
                     if (realCars[i] != null && realCars[i].tag == eventData.pointerDrag.tag)
                     {
                         realCars[i].GetComponent<RectTransform>().localPosition = objScript.startCoordinates[i];

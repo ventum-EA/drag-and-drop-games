@@ -40,12 +40,12 @@ public class WinningScript : MonoBehaviour
             winPanel.transform.SetAsLastSibling();
             timerScript.timerOn = false;
             winPanel.SetActive(true);
-            float winSeconds = timerScript.timeSeconds;
+            float winSeconds = timerScript.totalSeconds;
             float winMinutes=0;
             float winHours=0;
             do {
-                if (winSeconds >= 60) { winMinutes += 1; winSeconds = 0; }
-                if (winMinutes >= 60) { winHours += 1; winMinutes = 0; }
+                if (winSeconds >= 60) { winMinutes += 1; winSeconds -=60; }
+                if (winMinutes >= 60) { winHours += 1; winMinutes -=60; }
             }while(winSeconds>=60 || winMinutes>=60);
             winTime.GetComponent<TMP_Text>().text = string.Format("{0}h {1:00}m {2:00.00}s", winHours, winMinutes, System.Math.Round(winSeconds, 2));
             winPoints.GetComponent<TMP_Text>().text ="Points: "+ pointsAmount.ToString()+"/12";

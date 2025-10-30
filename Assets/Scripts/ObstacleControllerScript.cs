@@ -89,7 +89,7 @@ public class ObstacleControllerScript : MonoBehaviour
     public void TriggerExplosion()
     {
         isExploding = true;
-        objectScript.effects.PlayOneShot(objectScript.audioCli[6], 5f);
+        objectScript.effects.PlayOneShot(objectScript.audioCli[14], 5f);
 
         if (TryGetComponent<Animator>(out Animator animator))
         {
@@ -114,8 +114,8 @@ public class ObstacleControllerScript : MonoBehaviour
         if (TryGetComponent<CircleCollider2D>(out CircleCollider2D circleCollider))
         {
             radius = circleCollider.radius * transform.lossyScale.x;
-            ExploadAndDestroyNearbyObjects(radius);
-            yield return new WaitForSeconds(1f);
+            
+            yield return new WaitForSeconds(0.8f);
             ExploadAndDestroyNearbyObjects(radius);
             Destroy(gameObject);
         }
@@ -149,7 +149,7 @@ public class ObstacleControllerScript : MonoBehaviour
             StartCoroutine(RecoverColor(0.5f));
 
             StartCoroutine(Vibrate());
-            objectScript.effects.PlayOneShot(objectScript.audioCli[5]);
+            objectScript.effects.PlayOneShot(objectScript.audioCli[13]);
         }
     }
 

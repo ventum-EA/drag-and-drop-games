@@ -11,6 +11,7 @@ public class TimerScript : MonoBehaviour
     private int timeHours;
     public GameObject Timer;
     public bool timerOn = true;
+    public float totalSeconds;
     
     private string timerTemp;
     void Start()
@@ -26,6 +27,7 @@ public class TimerScript : MonoBehaviour
         {
 
             timeSeconds += Time.deltaTime;
+            totalSeconds += timeSeconds;
 
             if (timeSeconds >= 60) { timeMinutes += 1; timeSeconds = 0; }
             if (timeMinutes >= 60) { timeHours += 1; timeMinutes = 0; }
