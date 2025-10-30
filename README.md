@@ -52,13 +52,12 @@ Screenshots:
 - [x] Create C# script for transformation
 - [x] Create C# script for object fixation
 - [x] Add necessary sounds and audio sources
-- [ ] Create logic for winning 
+- [x] Create logic for winning 
 - [x] Create camera script for zoom-in/out and camera restrictions
 - [x] Create animated main menu with 3 button, sounds, animated objects
 - [x] Create C# script for scene change and quit option
-- [ ] Create game timer (HH:MM:SS)
-- [ ] Add animated clouds, vehicles, people, animals etc.
-- [ ] Add flying obstacles
-- [ ] Winning logic
-- [ ] Random car logic
-- [ ] 
+- [x] Create game timer (HH:MM:SS)
+- [x] Add animated clouds, vehicles, people, animals etc.
+- [x] Add flying obstacles
+- [x] Winning logic
+- [x] Random car logic
