@@ -39,6 +39,8 @@ Reward system that encourages improvement and replayability.
 Educational value: enhances motor skills, attention span, and strategic thinking.
 
 Screenshots:
+<img width="977" height="549" alt="image" src="https://github.com/user-attachments/assets/01877666-d5be-4b83-88e9-45697a16aa9c" />
+<img width="979" height="565" alt="image" src="https://github.com/user-attachments/assets/b044c006-ad5b-4b56-81ac-b8dbb90f6bed" />
 
 
 
