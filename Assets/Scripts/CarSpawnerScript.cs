@@ -12,11 +12,12 @@ public class CarSpawnerScript : MonoBehaviour
 
     private void Awake()
     {
+        screenBoundries.RecalculateBounds();
         foreach (GameObject car in cars)
         {
             Debug.Assert(car != null);
             Debug.Log(screenBoundries.maxX);
-            Vector3 spawnPosition = new Vector3(Random.Range(screenBoundries.minX, screenBoundries.maxX), Random.Range(screenBoundries.minY, screenBoundries.maxY), carHolders[0].GetComponent<Transform>().position.z);
+            Vector3 spawnPosition = new Vector3(Random.Range(screenBoundries.worldBounds.min.x*0.9f, screenBoundries.worldBounds.max.x*0.9f), Random.Range(screenBoundries.worldBounds.min.y*0.9f, screenBoundries.worldBounds.max.y*0.9f), carHolders[0].GetComponent<Transform>().position.z);
      
             GameObject newCar = Instantiate(car, spawnPosition, Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
             newCar.transform.SetParent(canv.transform);

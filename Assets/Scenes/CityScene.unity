@@ -4233,14 +4233,14 @@ MonoBehaviour:
   maxX: 0
   minY: 0
   maxY: 0
-  padding: 0.02
   worldBounds:
     serializedVersion: 2
     x: -960
     y: -540
     width: 1920
     height: 1080
-  targetCam: {fileID: 0}
+  padding: 0.02
+  targetCamera: {fileID: 0}
 --- !u!114 &1424380897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15943,7 +15943,6 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 519420032}
   - {fileID: 619394802}
   - {fileID: 1599007825}
   - {fileID: 1153393087}
@@ -15951,3 +15950,4 @@ SceneRoots:
   - {fileID: 1472387436}
   - {fileID: 1424380895}
   - {fileID: 2035944507}
+  - {fileID: 519420032}
