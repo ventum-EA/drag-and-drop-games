@@ -6,12 +6,12 @@ using UnityEngine.EventSystems;
 // CHANGES FOR ANDROID
 public class CameraScript : MonoBehaviour
 {
-    public float maxZoom = 530f, minZoom = 150f;
+    public float minZoom = 150f;
+    private float maxZoom;
     public float puncZoomSpeed = 0.9f, mouseZoomSpeed = 150f;
     public float mouseFollowSpeed = 1f, touchPanSpeed = 1f;
     public ScreenBoundriesScript screenBoundries;
     public Camera cam;
-    float startZoom;
     Vector2 lastTouchPos;
     int panFingerId = -1;
     bool isTouchPanning = false;
@@ -36,7 +36,6 @@ public class CameraScript : MonoBehaviour
 
     void Start()
     {
-        startZoom = cam.orthographicSize;
         screenBoundries.RecalculateBounds();
         transform.position = screenBoundries.GetClampedCameraPosition(transform.position);
     }
@@ -58,6 +57,7 @@ public class CameraScript : MonoBehaviour
 
         if (Input.touchCount == 2)
             HandlePinch();
+
         UpdateMaxZoom();
         cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, minZoom, maxZoom);
         screenBoundries.RecalculateBounds();
@@ -167,6 +167,7 @@ public class CameraScript : MonoBehaviour
         float duration = 0.25f;
         float elapsed = 0f;
         float initialZoom = cam.orthographicSize;
+
         float targetZoom = maxZoom;
 
         while (elapsed < duration)
@@ -174,7 +175,7 @@ public class CameraScript : MonoBehaviour
             // Remember to hange for slowmotion
             elapsed += Time.deltaTime;
 
-            cam.orthographicSize = Mathf.Lerp(initialZoom, startZoom, elapsed / duration);
+            cam.orthographicSize = Mathf.Lerp(initialZoom, targetZoom, elapsed / duration);
             screenBoundries.RecalculateBounds();
             transform.position = screenBoundries.GetClampedCameraPosition(transform.position);
             yield return null;
@@ -183,6 +184,7 @@ public class CameraScript : MonoBehaviour
         screenBoundries.RecalculateBounds();
         transform.position = screenBoundries.GetClampedCameraPosition(transform.position);
     }
+
     void UpdateMaxZoom()
     {
         if (screenBoundries == null || cam == null)
@@ -190,7 +192,7 @@ public class CameraScript : MonoBehaviour
 
         Rect wb = screenBoundries.worldBounds;
         float maxZoomHeight = wb.height / 2f;
-        float maxZoomWidth = (wb.width / 2f) / cam.aspect;
-        maxZoom = Mathf.Min(maxZoomHeight, maxZoomWidth);
+        float maxZoomWitdth = (wb.width / 2f) / cam.aspect;
+        maxZoom = Mathf.Min(maxZoomHeight, maxZoomWitdth);
     }
 }

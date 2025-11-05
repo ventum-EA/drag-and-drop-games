@@ -85,13 +85,17 @@ public class DragAndDropScript : MonoBehaviour, IPointerDownHandler, IBeginDragH
     // CHANGES FOR ANDROID
     public void OnDrag(PointerEventData eventData)
     {
+        Debug.Log("Ondrag");
         Vector3 pointerWorld;
 
         if (!ScreenPointToWorld(eventData.position, out pointerWorld))
+        {
             return;
-
+        }
+        //Debug.Log("Pointer World Position: " + pointerWorld);
         Vector3 desiredPosition = pointerWorld + dragOffsetWorld;
         desiredPosition.z = transform.position.z;
+        //Debug.Log("Desired Position: " + desiredPosition);
 
         screenBou.RecalculateBounds();
 

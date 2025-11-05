@@ -2025,7 +2025,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ba003c438e420e4988f44c630f310b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxZoom: 500
   minZoom: 50
   puncZoomSpeed: 0.9
   mouseZoomSpeed: 150
@@ -4240,7 +4239,7 @@ MonoBehaviour:
     width: 1920
     height: 1080
   padding: 0.02
-  targetCamera: {fileID: 0}
+  targetCamera: {fileID: 519420031}
 --- !u!114 &1424380897
 MonoBehaviour:
   m_ObjectHideFlags: 0
