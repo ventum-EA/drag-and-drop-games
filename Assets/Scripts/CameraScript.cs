@@ -53,12 +53,12 @@ public class CameraScript : MonoBehaviour
         if (Mathf.Abs(scroll) > Mathf.Epsilon)
             cam.orthographicSize -= scroll * mouseZoomSpeed;
 #else
-        HandTouch();
+        HandleTouch();
 #endif
 
         if (Input.touchCount == 2)
             HandlePinch();
-
+        UpdateMaxZoom();
         cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, minZoom, maxZoom);
         screenBoundries.RecalculateBounds();
         transform.position = screenBoundries.GetClampedCameraPosition(transform.position);
@@ -167,6 +167,7 @@ public class CameraScript : MonoBehaviour
         float duration = 0.25f;
         float elapsed = 0f;
         float initialZoom = cam.orthographicSize;
+        float targetZoom = maxZoom;
 
         while (elapsed < duration)
         {
@@ -178,8 +179,18 @@ public class CameraScript : MonoBehaviour
             transform.position = screenBoundries.GetClampedCameraPosition(transform.position);
             yield return null;
         }
-        cam.orthographicSize = startZoom;
+        cam.orthographicSize = targetZoom;
         screenBoundries.RecalculateBounds();
         transform.position = screenBoundries.GetClampedCameraPosition(transform.position);
+    }
+    void UpdateMaxZoom()
+    {
+        if (screenBoundries == null || cam == null)
+            return;
+
+        Rect wb = screenBoundries.worldBounds;
+        float maxZoomHeight = wb.height / 2f;
+        float maxZoomWidth = (wb.width / 2f) / cam.aspect;
+        maxZoom = Mathf.Min(maxZoomHeight, maxZoomWidth);
     }
 }
