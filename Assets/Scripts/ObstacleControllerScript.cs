@@ -44,14 +44,14 @@ public class ObstacleControllerScript : MonoBehaviour
         rectTransform.anchoredPosition += new Vector2(-speed * Time.deltaTime, waveOffset * Time.deltaTime);
 
         // Iznīcinās ja lido pa kreisi
-        if (speed > 0 && transform.position.x < (screenBoundriesScript.minX + 80) && !isFadingOut)
+        if (speed > 0 && transform.position.x < (screenBoundriesScript.worldBounds.min.x + 80) && !isFadingOut)
         {
             isFadingOut = true;
             StartCoroutine(FadeOutAndDestroy());
         }
 
         // Iznīcinās ja lido pa labi
-        if (speed < 0 && transform.position.x > (screenBoundriesScript.maxX - 80) && !isFadingOut)
+        if (speed < 0 && transform.position.x > (screenBoundriesScript.worldBounds.max.x - 80) && !isFadingOut)
         {
             isFadingOut = true;
             StartCoroutine(FadeOutAndDestroy());
