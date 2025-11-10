@@ -26,12 +26,14 @@ public class AdManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
         adsInitializer.OnAdsInitialized += HandleAdsInitialized;
     }
 
     private void HandleAdsInitialized()
     {
-        if (!turnOffInterstitialAd)
+        
+        if (!turnOffInterstitialAd || interstitialAd.isReady)
         {
             interstitialAd.OnInterstitialAdReady += HandleInterstitialReady;
             interstitialAd.LoadAd();
@@ -39,6 +41,7 @@ public class AdManager : MonoBehaviour
     }
     private void HandleInterstitialReady()
     {
+
         if (!firstAdShown)
         {
             Debug.Log("[AdManager] Showing first time interstitial ad automatically!");
@@ -53,6 +56,8 @@ public class AdManager : MonoBehaviour
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+        
+
     }
     private void OnDisable()
     {
@@ -61,6 +66,7 @@ public class AdManager : MonoBehaviour
     private bool firstSceneLoad = false;
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        firstAdShown = false;
         if (interstitialAd == null)
         {
             interstitialAd = FindFirstObjectByType<InterstitialAds>();
@@ -78,6 +84,7 @@ public class AdManager : MonoBehaviour
         }
         Debug.Log("Scene loaded!");
         HandleAdsInitialized();
+
 
     }
 }

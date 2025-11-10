@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Advertisements;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class InterstitialAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
@@ -17,10 +18,17 @@ public class InterstitialAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSh
     }
     private void Update()
     {
-        if (AdManager.Instance != null && AdManager.Instance.interstitialAd != null) {
+        if (AdManager.Instance != null && AdManager.Instance.interstitialAd != null && _interstitialAdButton!=null) {
             _interstitialAdButton.interactable = isReady;
         }
     }
+    //public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    //{
+    //    if (isReady)
+    //    {
+    //        ShowAd();
+    //    }
+    //}
     public void OnInterstitialAdButtonClicked()
     {
         Debug.Log("[InterstitialAds] Interstitial ad button clicked!");
@@ -35,6 +43,8 @@ public class InterstitialAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSh
         }
         Debug.Log("[InterstitialAds] Loading interstitial ad...");
         Advertisement.Load(_adUnitId, this);
+        isReady = true;
+        
     }
     public void ShowInterstitial()
     {
@@ -42,7 +52,7 @@ public class InterstitialAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSh
         {
             Debug.Log("[InterstitialAds] Showing interstitial ad manually...");
             ShowAd();
-
+            isReady = false;
         }
         else
         {
@@ -67,7 +77,10 @@ public class InterstitialAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSh
     public void OnUnityAdsAdLoaded(string placementId)
     {
         Debug.Log("[InterstitialAds] Interstitial ad loaded!");
-        _interstitialAdButton.interactable = true;
+        if (_interstitialAdButton != null)
+        {
+            _interstitialAdButton.interactable = true;
+        }
         isReady = true;
         OnInterstitialAdReady?.Invoke();
     }
@@ -130,5 +143,9 @@ public class InterstitialAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSh
         _interstitialAdButton.interactable = false;
 
     }
-
+    public void SetReaday()
+    {
+        isReady = true;
+        
+    }
 }

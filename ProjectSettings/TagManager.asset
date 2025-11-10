@@ -18,6 +18,7 @@ TagManager:
   - Tractor5
   - CloudBomb
   - InterstitialAdButton
+  - SpawnRod
   layers:
   - Default
   - TransparentFX
