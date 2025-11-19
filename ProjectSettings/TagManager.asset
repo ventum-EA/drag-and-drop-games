@@ -19,6 +19,7 @@ TagManager:
   - CloudBomb
   - InterstitialAdButton
   - SpawnRod
+  - BannerButton
   layers:
   - Default
   - TransparentFX
