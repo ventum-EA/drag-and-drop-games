@@ -81,8 +81,7 @@ public class AdManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         firstAdShown = false;
-        if (bannerAd == null)
-            bannerAd = FindFirstObjectByType<BannerAd>();
+        if (bannerAd == null) { bannerAd = FindFirstObjectByType<BannerAd>(); }
         if (interstitialAd == null)
         {
             interstitialAd = FindFirstObjectByType<InterstitialAds>();
@@ -110,7 +109,7 @@ public class AdManager : MonoBehaviour
             rewardedAds.SetButton(rewardedAdButton); 
         }
 
-        Button bannerButton = GameObject.FindGameObjectWithTag("BannerButton").GetComponent<Button>();
+        Button bannerButton = GameObject.FindGameObjectWithTag("BannerButton")?.GetComponent<Button>();
         if (bannerAd != null && bannerButton != null)
         {
             bannerAd.SetButton(bannerButton);

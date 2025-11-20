@@ -39,7 +39,10 @@ public class BannerAd : MonoBehaviour
     void OnBannerLoaded()
     {
         Debug.Log("Banner ad loaded!");
-        _bannerButton.interactable = true;
+        if (_bannerButton)
+        {
+            _bannerButton.interactable = true;
+        }
     }
 
     void OnBannerError(string message)
@@ -92,8 +95,12 @@ public class BannerAd : MonoBehaviour
 
     public void SetButton(Button button)
     {
+        Debug.Log("[BannerAd] Setting banner ad button!");
         if (button == null)
+        {
             return;
+        }
+
 
         button.onClick.RemoveAllListeners();
         button.onClick.AddListener(ShowBannerAd);
