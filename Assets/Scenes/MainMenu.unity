@@ -670,8 +670,10 @@ GameObject:
   m_Component:
   - component: {fileID: 413114846}
   - component: {fileID: 413114845}
+  - component: {fileID: 413114848}
   - component: {fileID: 413114844}
   - component: {fileID: 413114843}
+  - component: {fileID: 413114847}
   m_Layer: 0
   m_Name: Ads
   m_TagString: Untagged
@@ -723,9 +725,9 @@ MonoBehaviour:
   adsInitializer: {fileID: 413114844}
   interstitialAd: {fileID: 413114843}
   turnOffInterstitialAd: 1
-  rewardedAds: {fileID: 0}
+  rewardedAds: {fileID: 413114847}
   turnOffRewardedAds: 0
-  bannerAd: {fileID: 0}
+  bannerAd: {fileID: 413114848}
   turnOffBannerAd: 0
 --- !u!4 &413114846
 Transform:
@@ -742,6 +744,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &413114847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413114842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf1b3d09bd708644d887128df0a36eee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _androidAdUnitId: Rewarded_Android
+  _rewardedAdButton: {fileID: 0}
+  flayingObjectManager: {fileID: 0}
+--- !u!114 &413114848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413114842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04615b3b4c849044cba7b71ef6e530e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _androidAdUnitId: Banner_Android
+  _bannerButton: {fileID: 0}
+  isBannerVisible: 0
+  _bannerPosition: 4
 --- !u!1 &458344607
 GameObject:
   m_ObjectHideFlags: 0

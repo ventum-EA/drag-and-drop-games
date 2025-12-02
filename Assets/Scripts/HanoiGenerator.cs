@@ -309,7 +309,7 @@ public class HanoiUltimate : MonoBehaviour
 
     void CheckWinCondition()
     {
-        if (poles[2].Count == diskAmount)
+        if (poles[2].Count == diskAmount || poles[1].Count == diskAmount)
         {
             gameWon = true;
         }
