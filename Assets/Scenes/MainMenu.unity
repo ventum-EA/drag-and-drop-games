@@ -723,6 +723,10 @@ MonoBehaviour:
   adsInitializer: {fileID: 413114844}
   interstitialAd: {fileID: 413114843}
   turnOffInterstitialAd: 1
+  rewardedAds: {fileID: 0}
+  turnOffRewardedAds: 0
+  bannerAd: {fileID: 0}
+  turnOffBannerAd: 0
 --- !u!4 &413114846
 Transform:
   m_ObjectHideFlags: 0
@@ -6458,7 +6462,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Start Game 2
+  m_text: Start Hanoi Tower
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6485,7 +6489,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 59.15
+  m_fontSize: 44.2
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6624,7 +6628,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1288713974}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: ToCityScene
+        m_MethodName: ToHanoi
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

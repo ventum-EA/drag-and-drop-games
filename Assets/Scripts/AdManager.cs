@@ -43,11 +43,11 @@ public class AdManager : MonoBehaviour
             interstitialAd.OnInterstitialAdReady += HandleInterstitialReady;
             interstitialAd.LoadAd();
         }
-        if (!turnOffRewardedAds)
+        if (!turnOffRewardedAds && rewardedAds)
         {
             rewardedAds.LoadAd();
         }
-        if (!turnOffBannerAd)
+        if (bannerAd)
         {
             bannerAd.LoadBanner();
         }
@@ -96,13 +96,13 @@ public class AdManager : MonoBehaviour
         {
             rewardedAds = FindFirstObjectByType<RewardedAds>();
         }
-        Button rewardedAdButton = GameObject.FindGameObjectWithTag("RewardedAdButton").GetComponent<Button>();
+        Button rewardedAdButton = GameObject.FindGameObjectWithTag("RewardedAdButton")?.GetComponent<Button>();
         if(rewardedAds!=null && rewardedAdButton!= null)
         {
             rewardedAds.SetButton(rewardedAdButton); 
         }
 
-        Button bannerButton = GameObject.FindGameObjectWithTag("BannerButton").GetComponent<Button>();
+        Button bannerButton = GameObject.FindGameObjectWithTag("BannerButton")?.GetComponent<Button>();
         if (bannerAd != null && bannerButton != null)
         {
             bannerAd.SetButton(bannerButton);
@@ -114,6 +114,8 @@ public class AdManager : MonoBehaviour
             Debug.Log("First time scene loaded!");
             return;
         }
+        if (rewardedAds.flayingObjectManager == null)
+            rewardedAds.flayingObjectManager = FindFirstObjectByType<FlyingObjectManager>();
         Debug.Log("Scene loaded!");
         HandleAdsInitialized(); 
     }

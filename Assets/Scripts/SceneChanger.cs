@@ -19,5 +19,8 @@ public class SceneChanger : MonoBehaviour
     {
         SceneManager.LoadScene("CityScene", LoadSceneMode.Single);
     }
-    
+    public void ToHanoi()
+    {
+        SceneManager.LoadScene("Hanoi", LoadSceneMode.Single);
+    }
 }
