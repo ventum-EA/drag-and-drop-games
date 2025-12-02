@@ -20,6 +20,7 @@ TagManager:
   - InterstitialAdButton
   - SpawnRod
   - BannerButton
+  - RewardedAdButton
   layers:
   - Default
   - TransparentFX

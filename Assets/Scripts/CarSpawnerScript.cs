@@ -26,7 +26,7 @@ public class CarSpawnerScript : MonoBehaviour
             {
                 Debug.Assert(car != null);
                 Debug.Log(screenBoundries.maxX);
-                Vector3 spawnPosition = new Vector3(Random.Range(screenBoundries.minX, screenBoundries.maxX), Random.Range(screenBoundries.minY, screenBoundries.maxY),canv.GetComponent<Transform>().position.z);
+                Vector3 spawnPosition = new Vector3(Random.Range(screenBoundries.worldBounds.min.x, screenBoundries.worldBounds.max.x), Random.Range(screenBoundries.worldBounds.min.y, screenBoundries.worldBounds.max.y),canv.GetComponent<Transform>().position.z);
 
                 GameObject newCar = Instantiate(car, spawnPosition, Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
                 newCar.transform.SetParent(canv.transform);
