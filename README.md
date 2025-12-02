@@ -61,3 +61,9 @@ Screenshots:
 - [x] Add flying obstacles
 - [x] Winning logic
 - [x] Random car logic
+- [ ] Change target platform to Android
+- [ ] Replace all mouse input with touch
+- [ ] Fix camera max zoom
+- [ ] Add inerstitial ad
+- [ ] Add rewarded ad
+- [ ] Add banner ad

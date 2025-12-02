@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+// CHANGES FOR ANDROID
 public class ObstacleControllerScript : MonoBehaviour
 {
     [HideInInspector]
@@ -43,23 +44,28 @@ public class ObstacleControllerScript : MonoBehaviour
         rectTransform.anchoredPosition += new Vector2(-speed * Time.deltaTime, waveOffset * Time.deltaTime);
 
         // Iznīcinās ja lido pa kreisi
-        if (speed > 0 && transform.position.x < (screenBoundriesScript.minX + 80) && !isFadingOut)
+        if (speed > 0 && transform.position.x < (screenBoundriesScript.worldBounds.min.x + 80) && !isFadingOut)
         {
             isFadingOut = true;
             StartCoroutine(FadeOutAndDestroy());
         }
 
         // Iznīcinās ja lido pa labi
-        if (speed < 0 && transform.position.x > (screenBoundriesScript.maxX - 80) && !isFadingOut)
+        if (speed < 0 && transform.position.x > (screenBoundriesScript.worldBounds.max.x - 80) && !isFadingOut)
         {
             isFadingOut = true;
             StartCoroutine(FadeOutAndDestroy());
         }
 
         // Ja neko nevelk un kursors pieskaras bumbai
+        Vector2 inputPosition;
+        if (!TryGetInputPosition(out inputPosition))
+            return;
+
+
         if (CompareTag("CloudBomb") && !isExploding &&
             RectTransformUtility.RectangleContainsScreenPoint(
-                rectTransform, Input.mousePosition, Camera.main))
+                rectTransform, inputPosition, Camera.main))
         {
             Debug.Log("Bomb hit by cursor (without dragging)");
             TriggerExplosion();
@@ -68,7 +74,7 @@ public class ObstacleControllerScript : MonoBehaviour
 
         if (ObjectScript.drag && !isFadingOut &&
             RectTransformUtility.RectangleContainsScreenPoint(
-                rectTransform, Input.mousePosition, Camera.main))
+                rectTransform, inputPosition, Camera.main))
         {
             Debug.Log("Obstacle hit by drag");
             if (objectScript.lastDragged != null)
@@ -84,6 +90,26 @@ public class ObstacleControllerScript : MonoBehaviour
             else
                 StartToDestroy(Color.cyan);
         }
+    }
+
+    bool TryGetInputPosition(out Vector2 position)
+    {
+#if UNITY_EDITOR || UNITY_STANDALONE
+        position = Input.mousePosition;
+        return true;
+
+#elif UNITY_ANDROID
+            if(Input.touchCount > 0)
+            {
+                position = Input.GetTouch(0).position;
+                return true;
+            }
+            else
+            {
+                position = Vector2.zero;
+                return false;
+            }
+#endif
     }
 
     public void TriggerExplosion()
@@ -210,6 +236,10 @@ public class ObstacleControllerScript : MonoBehaviour
 
     IEnumerator Vibrate()
     {
+#if UNITY_ANDROID
+        Handheld.Vibrate();
+#endif
+
         Vector2 orginalPosition = rectTransform.anchoredPosition;
         float duration = 0.3f;
         float elpased = 0f;
