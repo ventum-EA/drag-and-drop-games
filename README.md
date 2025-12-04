@@ -6,7 +6,7 @@ A fun and interactive Unity project designed especially for children! This colle
 Players must drag cars and drop them into randomly placed parking spaces on the map. Each round presents a new layout, ensuring that no two games feel the same.
 
 Gameplay Overview
-Goal: Drag each car and drop it into its matching or nearest available parking space on the map. Each correctly parked car earns points and allows the player to continue to the next round.
+Goal: Drag each car and drop it into its matching or nearest available parking space on the map. Each correctly parked car earns points.
 
 Avoid: But players must stay alert — the skies aren’t safe! Obstacles like clouds, planes, and bombs move across the screen and can destroy the car currently being dragged. Timing, precision, and quick thinking are key to success.
 
@@ -14,16 +14,12 @@ Scoring System:
 
 Points are awarded for each correctly placed car.
 
-Bonus points are earned for surviving longer without letting your car get destroyed.
+Bonus points are earned for placing cars faster.
 
-Combo bonuses can be triggered by parking multiple cars correctly in a row without errors.
-
-Game Over occurs when the player’s car is destroyed while being dragged or if too many cars remain unparked when the timer runs out.
+Game Over occurs when all cars are placed or destroyed.
 
 ## Game 2: Tower of Hanoi
 A physics-based 3D re-imagining of the classic mathematical puzzle. This mode introduces children to logic and sequencing in a tactile, 3D environment.
-
-Shutterstock
 
 Gameplay Overview
 Goal: The objective is to move the entire stack of disks from the first rod to the last rod. The game utilizes Unity physics, giving the disks weight and presence as they slide down the rods.
