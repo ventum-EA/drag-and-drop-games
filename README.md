@@ -1,46 +1,68 @@
 # Drag-and-Drop Games
 
-A fun and interactive Unity 2D drag-and-drop game designed especially for children! The game combines simple mechanics with colorful visuals to create an engaging and educational experience. Players must drag cars and drop them into randomly placed parking spaces on the map. Each round presents a new layout, ensuring that no two games feel the same.
+A fun and interactive Unity project designed especially for children! This collection combines simple mechanics with colorful visuals to create engaging and educational experiences. The project currently features two distinct game modes: a 2D Car Parking challenge and a 3D Physics-based Tower of Hanoi.
 
-But players must stay alert — the skies aren’t safe! Obstacles like clouds, planes, and bombs move across the screen and can destroy the car currently being dragged. Timing, precision, and quick thinking are key to success.
-
-As players progress, the game increases in difficulty: cars appear faster, obstacles move unpredictably, and the number of parking spaces changes dynamically. This creates a fun challenge while helping children improve hand-eye coordination, spatial awareness, and problem-solving skills.
+## Game 1: 2D Car Parking Challenge
+Players must drag cars and drop them into randomly placed parking spaces on the map. Each round presents a new layout, ensuring that no two games feel the same.
 
 Gameplay Overview
+Goal: Drag each car and drop it into its matching or nearest available parking space on the map. Each correctly parked car earns points.
 
-Goal:
-Drag each car and drop it into its matching or nearest available parking space on the map. Each correctly parked car earns points and allows the player to continue to the next round.
-
-Avoid:
-Watch out for flying obstacles such as clouds, planes, and bombs that travel across the screen. If one of these touches the car you’re holding, the car is destroyed and you lose valuable time or even the game.
+Avoid: But players must stay alert — the skies aren’t safe! Obstacles like clouds, planes, and bombs move across the screen and can destroy the car currently being dragged. Timing, precision, and quick thinking are key to success.
 
 Scoring System:
 
 Points are awarded for each correctly placed car.
 
-Bonus points are earned for surviving longer without letting your car get destroyed.
+Bonus points are earned for placing cars faster.
 
-Combo bonuses can be triggered by parking multiple cars correctly in a row without errors.
+Game Over occurs when all cars are placed or destroyed.
 
-Game Over occurs when the player’s car is destroyed while being dragged or if too many cars remain unparked when the timer runs out.
+## Game 2: Tower of Hanoi
+A physics-based 3D re-imagining of the classic mathematical puzzle. This mode introduces children to logic and sequencing in a tactile, 3D environment.
 
-Game Features
+Gameplay Overview
+Goal: The objective is to move the entire stack of disks from the first rod to the last rod. The game utilizes Unity physics, giving the disks weight and presence as they slide down the rods.
 
-Simple and intuitive drag-and-drop controls designed for kids.
+Controls:
 
-Bright, colorful 2D graphics and smooth animations.
+Click/Touch: Pick up the top disk from a stack.
 
-Randomized parking layouts to keep gameplay fresh and unpredictable.
+Drag: Move the disk through the air.
 
-Increasing levels of difficulty and obstacle speed for added challenge.
+Release: Drop the disk onto a target rod.
 
-Reward system that encourages improvement and replayability.
+Rules:
 
-Educational value: enhances motor skills, attention span, and strategic thinking.
+Only one disk can be moved at a time.
+
+Each move consists of taking the upper disk from one of the stacks and placing it on top of another stack.
+
+Crucial Rule: No disk may be placed on top of a smaller disk.
+
+Features
+Physics-Based Interaction: Disks react to gravity and collide with the floor and rods, making the gameplay feel realistic and grounded.
+
+Move Counter: Tracks the player's efficiency, encouraging them to solve the puzzle in fewer steps.
+
+Win Condition: Automatically detects when the tower is fully assembled on a side rod.
+
+Rewarded Ad "Instant Win": Players struggling with the puzzle can watch a rewarded video ad to see the tower magically assemble itself instantly!
+
+General Project Features
+Simple Controls: Intuitive drag-and-drop controls designed for kids.
+
+Visuals: Bright, colorful graphics (2D for Parking, 3D for Hanoi) with smooth animations.
+
+Progression: Increasing levels of difficulty and obstacle speed for added challenge.
+
+Educational Value: Enhances motor skills, attention span, spatial awareness, and strategic thinking.
 
 Screenshots:
 <img width="977" height="549" alt="image" src="https://github.com/user-attachments/assets/01877666-d5be-4b83-88e9-45697a16aa9c" />
 <img width="979" height="565" alt="image" src="https://github.com/user-attachments/assets/b044c006-ad5b-4b56-81ac-b8dbb90f6bed" />
+<img width="886" height="388" alt="image" src="https://github.com/user-attachments/assets/111e2b49-5212-4012-aae9-28bed6804587" />
+
 
 
 
