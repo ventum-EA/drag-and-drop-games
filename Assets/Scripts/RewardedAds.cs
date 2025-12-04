@@ -10,14 +10,20 @@ public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
 
     [SerializeField] Button _rewardedAdButton;
     public FlyingObjectManager flayingObjectManager;
+    public HanoiUltimate hanoiGame;
 
-
+    private void Start()
+    {
+        LoadAd();
+    }
     private void Awake()
     {
         _adUnitId = _androidAdUnitId;
 
         if (flayingObjectManager == null)
             flayingObjectManager = FindFirstObjectByType<FlyingObjectManager>();
+        if (hanoiGame == null)
+            hanoiGame = FindFirstObjectByType<HanoiUltimate>();
     }
 
     public void LoadAd()
@@ -72,14 +78,25 @@ public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
 
     public void OnUnityAdsShowComplete(string placementId, UnityAdsShowCompletionState showCompletionState)
     {
+        if (showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED))
+        {
+            Debug.Log("Rewarded ad completed!");
 
-        //if (placementId.Equals(_adUnitId) &&
-        //  showCompletionState.Equals(UnityAdsCompletionState.COMPLETED)) {
-        Debug.Log("Rewarded ad completed!");
-        flayingObjectManager.DestroyAllFlyingObjects();
-        _rewardedAdButton.interactable = false;
-        StartCoroutine(WaitAndLoad(10f));
-        // }
+            // 1. Check if we are in the Flying Object game
+            if (flayingObjectManager != null)
+            {
+                flayingObjectManager.DestroyAllFlyingObjects();
+            }
+
+            // 2. Check if we are in the Hanoi game
+            if (hanoiGame != null)
+            {
+                hanoiGame.GrantReward_InstantWin();
+            }
+
+            _rewardedAdButton.interactable = false;
+            StartCoroutine(WaitAndLoad(10f));
+        }
 
         Time.timeScale = 1f;
     }
@@ -100,5 +117,6 @@ public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
     {
         _rewardedAdButton.interactable = false;
         Advertisement.Show(_adUnitId, this);
+        LoadAd();
     }
 }

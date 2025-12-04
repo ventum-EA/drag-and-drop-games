@@ -55,11 +55,14 @@ public class BannerAd : MonoBehaviour
     {
         if (isBannerVisible)
         {
-            HideBannerAd();
+            //HideBannerAd();
 
         }
         else
         {
+            
+                Advertisement.Banner.SetPosition(_bannerPosition);
+           
             BannerOptions options = new BannerOptions
             {
                 clickCallback = OnBannerClicked,

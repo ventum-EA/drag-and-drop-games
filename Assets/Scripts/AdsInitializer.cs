@@ -16,9 +16,9 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
     public void InitializeAds()
     {
 #if UNITY_ANDROID || UNITY_EDITOR
-        _gameId = _androidGameId;
+        _gameId = _androidGameId;
 #endif
-        if(!Advertisement.isInitialized && Advertisement.isSupported)
+        if (!Advertisement.isInitialized && Advertisement.isSupported)
         {
             Advertisement.Initialize(_gameId, _testMode, this);
         }
@@ -33,6 +33,6 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
 
     public void OnInitializationFailed(UnityAdsInitializationError error, string message)
     {
-        Debug.LogWarning($"Unity ads intialization failed: { error.ToString()} - {message}");
+        Debug.LogWarning($"Unity ads intialization failed: {error.ToString()} - {message}");
     }
 }

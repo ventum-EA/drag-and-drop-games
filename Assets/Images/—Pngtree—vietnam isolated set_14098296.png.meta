@@ -1,0 +1,884 @@
+fileFormatVersion: 2
+guid: 8b1f15bcf827bec41be69814ff068de8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7845738988684824289
+    second: "\u2014Pngtree\u2014vietnam isolated set_14098296_0"
+  - first:
+      213: 6268493945350818006
+    second: "\u2014Pngtree\u2014vietnam isolated set_14098296_1"
+  - first:
+      213: -4990875955115960090
+    second: "\u2014Pngtree\u2014vietnam isolated set_14098296_2"
+  - first:
+      213: -1869728353696004506
+    second: "\u2014Pngtree\u2014vietnam isolated set_14098296_3"
+  - first:
+      213: 1075076873679080962
+    second: "\u2014Pngtree\u2014vietnam isolated set_14098296_4"
+  - first:
+      213: -4424102907265304576
+    second: "\u2014Pngtree\u2014vietnam isolated set_14098296_5"
+  - first:
+      213: 4446433324157075159
+    second: "\u2014Pngtree\u2014vietnam isolated set_14098296_6"
+  - first:
+      213: -8479895166123041744
+    second: "\u2014Pngtree\u2014vietnam isolated set_14098296_7"
+  - first:
+      213: 287916799369742397
+    second: "\u2014Pngtree\u2014vietnam isolated set_14098296_8"
+  - first:
+      213: -5854011027714001041
+    second: "\u2014Pngtree\u2014vietnam isolated set_14098296_9"
+  - first:
+      213: 1631016166964510215
+    second: "\u2014Pngtree\u2014vietnam isolated set_14098296_10"
+  - first:
+      213: 1332092282366624215
+    second: "\u2014Pngtree\u2014vietnam isolated set_14098296_11"
+  - first:
+      213: -181453104497451980
+    second: "\u2014Pngtree\u2014vietnam isolated set_14098296_12"
+  - first:
+      213: 488697133949442120
+    second: "\u2014Pngtree\u2014vietnam isolated set_14098296_13"
+  - first:
+      213: 3300133027688976670
+    second: "\u2014Pngtree\u2014vietnam isolated set_14098296_14"
+  - first:
+      213: -3593720818680246844
+    second: "\u2014Pngtree\u2014vietnam isolated set_14098296_15"
+  - first:
+      213: 1314574067860892965
+    second: "\u2014Pngtree\u2014vietnam isolated set_14098296_16"
+  - first:
+      213: -5791563112980796436
+    second: "\u2014Pngtree\u2014vietnam isolated set_14098296_17"
+  - first:
+      213: -8366838484629621770
+    second: "\u2014Pngtree\u2014vietnam isolated set_14098296_18"
+  - first:
+      213: -1907282499561924453
+    second: "\u2014Pngtree\u2014vietnam isolated set_14098296_19"
+  - first:
+      213: 3107098178450789062
+    second: "\u2014Pngtree\u2014vietnam isolated set_14098296_20"
+  - first:
+      213: -6683103655784356752
+    second: "\u2014Pngtree\u2014vietnam isolated set_14098296_21"
+  - first:
+      213: 7345674465887422195
+    second: "\u2014Pngtree\u2014vietnam isolated set_14098296_22"
+  - first:
+      213: 2452138314745886706
+    second: "\u2014Pngtree\u2014vietnam isolated set_14098296_23"
+  - first:
+      213: 3715972325721654167
+    second: "\u2014Pngtree\u2014vietnam isolated set_14098296_24"
+  - first:
+      213: 3346619300257446448
+    second: "\u2014Pngtree\u2014vietnam isolated set_14098296_25"
+  - first:
+      213: 6510825578864022955
+    second: "\u2014Pngtree\u2014vietnam isolated set_14098296_26"
+  - first:
+      213: -3175721730081584542
+    second: "\u2014Pngtree\u2014vietnam isolated set_14098296_27"
+  - first:
+      213: 3570281244692793312
+    second: "\u2014Pngtree\u2014vietnam isolated set_14098296_28"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014vietnam isolated set_14098296_0"
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 952
+        width: 45
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1eecdfcaa0aa1ec60800000000000000
+      internalID: 7845738988684824289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014vietnam isolated set_14098296_1"
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 942
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d88259080a2ef650800000000000000
+      internalID: 6268493945350818006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014vietnam isolated set_14098296_2"
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 935
+        width: 68
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e85649f2c8dcbab0800000000000000
+      internalID: -4990875955115960090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014vietnam isolated set_14098296_3"
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 965
+        width: 67
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6664973f7f36d06e0800000000000000
+      internalID: -1869728353696004506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014vietnam isolated set_14098296_4"
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 938
+        width: 81
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20e01e978b07bee00800000000000000
+      internalID: 1075076873679080962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014vietnam isolated set_14098296_5"
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 702
+        width: 257
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 008bda288dd6a92c0800000000000000
+      internalID: -4424102907265304576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014vietnam isolated set_14098296_6"
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 733
+        width: 226
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7de77d3dc87e4bd30800000000000000
+      internalID: 4446433324157075159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014vietnam isolated set_14098296_7"
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 910
+        width: 103
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03c1faa564c515a80800000000000000
+      internalID: -8479895166123041744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014vietnam isolated set_14098296_8"
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 703
+        width: 226
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d380d47bdc2eef300800000000000000
+      internalID: 287916799369742397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014vietnam isolated set_14098296_9"
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 700
+        width: 217
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6733e57cff52cea0800000000000000
+      internalID: -5854011027714001041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014vietnam isolated set_14098296_10"
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 638
+        width: 94
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70eb6d6ff8882a610800000000000000
+      internalID: 1631016166964510215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014vietnam isolated set_14098296_11"
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 347
+        width: 219
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d180828fda8c7210800000000000000
+      internalID: 1332092282366624215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014vietnam isolated set_14098296_12"
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 517
+        width: 343
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43c9903ec595b7df0800000000000000
+      internalID: -181453104497451980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014vietnam isolated set_14098296_13"
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 671
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 848decf347338c600800000000000000
+      internalID: 488697133949442120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014vietnam isolated set_14098296_14"
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 632
+        width: 15
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e119feaf08d6ccd20800000000000000
+      internalID: 3300133027688976670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014vietnam isolated set_14098296_15"
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 513
+        width: 284
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cd43aca4f9802ec0800000000000000
+      internalID: -3593720818680246844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014vietnam isolated set_14098296_16"
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 438
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52de9c9562e4e3210800000000000000
+      internalID: 1314574067860892965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014vietnam isolated set_14098296_17"
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 357
+        width: 237
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ceb2684a80c30afa0800000000000000
+      internalID: -5791563112980796436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014vietnam isolated set_14098296_18"
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 408
+        width: 207
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f375964ab403eb80800000000000000
+      internalID: -8366838484629621770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014vietnam isolated set_14098296_19"
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 351
+        width: 220
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b98da4ffba8f785e0800000000000000
+      internalID: -1907282499561924453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014vietnam isolated set_14098296_20"
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 338
+        width: 252
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c292d8c451ae1b20800000000000000
+      internalID: 3107098178450789062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014vietnam isolated set_14098296_21"
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 20
+        width: 507
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 074ebd732a8d043a0800000000000000
+      internalID: -6683103655784356752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014vietnam isolated set_14098296_22"
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 38
+        width: 107
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f680e6f10411f560800000000000000
+      internalID: 7345674465887422195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014vietnam isolated set_14098296_23"
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 220
+        width: 280
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f7bd862eceb70220800000000000000
+      internalID: 2452138314745886706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014vietnam isolated set_14098296_24"
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 207
+        width: 34
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79342d56429c19330800000000000000
+      internalID: 3715972325721654167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014vietnam isolated set_14098296_25"
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 208
+        width: 33
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03abf4eb584917e20800000000000000
+      internalID: 3346619300257446448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014vietnam isolated set_14098296_26"
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 201
+        width: 88
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba597be3e591b5a50800000000000000
+      internalID: 6510825578864022955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014vietnam isolated set_14098296_27"
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 40
+        width: 65
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26a8ff489e19de3d0800000000000000
+      internalID: -3175721730081584542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014vietnam isolated set_14098296_28"
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 40
+        width: 242
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e7472a30ef2c8130800000000000000
+      internalID: 3570281244692793312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      "\u2014Pngtree\u2014vietnam isolated set_14098296_0": 7845738988684824289
+      "\u2014Pngtree\u2014vietnam isolated set_14098296_1": 6268493945350818006
+      "\u2014Pngtree\u2014vietnam isolated set_14098296_10": 1631016166964510215
+      "\u2014Pngtree\u2014vietnam isolated set_14098296_11": 1332092282366624215
+      "\u2014Pngtree\u2014vietnam isolated set_14098296_12": -181453104497451980
+      "\u2014Pngtree\u2014vietnam isolated set_14098296_13": 488697133949442120
+      "\u2014Pngtree\u2014vietnam isolated set_14098296_14": 3300133027688976670
+      "\u2014Pngtree\u2014vietnam isolated set_14098296_15": -3593720818680246844
+      "\u2014Pngtree\u2014vietnam isolated set_14098296_16": 1314574067860892965
+      "\u2014Pngtree\u2014vietnam isolated set_14098296_17": -5791563112980796436
+      "\u2014Pngtree\u2014vietnam isolated set_14098296_18": -8366838484629621770
+      "\u2014Pngtree\u2014vietnam isolated set_14098296_19": -1907282499561924453
+      "\u2014Pngtree\u2014vietnam isolated set_14098296_2": -4990875955115960090
+      "\u2014Pngtree\u2014vietnam isolated set_14098296_20": 3107098178450789062
+      "\u2014Pngtree\u2014vietnam isolated set_14098296_21": -6683103655784356752
+      "\u2014Pngtree\u2014vietnam isolated set_14098296_22": 7345674465887422195
+      "\u2014Pngtree\u2014vietnam isolated set_14098296_23": 2452138314745886706
+      "\u2014Pngtree\u2014vietnam isolated set_14098296_24": 3715972325721654167
+      "\u2014Pngtree\u2014vietnam isolated set_14098296_25": 3346619300257446448
+      "\u2014Pngtree\u2014vietnam isolated set_14098296_26": 6510825578864022955
+      "\u2014Pngtree\u2014vietnam isolated set_14098296_27": -3175721730081584542
+      "\u2014Pngtree\u2014vietnam isolated set_14098296_28": 3570281244692793312
+      "\u2014Pngtree\u2014vietnam isolated set_14098296_3": -1869728353696004506
+      "\u2014Pngtree\u2014vietnam isolated set_14098296_4": 1075076873679080962
+      "\u2014Pngtree\u2014vietnam isolated set_14098296_5": -4424102907265304576
+      "\u2014Pngtree\u2014vietnam isolated set_14098296_6": 4446433324157075159
+      "\u2014Pngtree\u2014vietnam isolated set_14098296_7": -8479895166123041744
+      "\u2014Pngtree\u2014vietnam isolated set_14098296_8": 287916799369742397
+      "\u2014Pngtree\u2014vietnam isolated set_14098296_9": -5854011027714001041
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

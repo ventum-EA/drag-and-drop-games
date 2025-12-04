@@ -1,9 +1,21 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI; // REQUIRED FOR UI
+using UnityEngine.SceneManagement; // REQUIRED FOR SCENE LOADING
 
 public class HanoiUltimate : MonoBehaviour
 {
+    [Header("UI Settings")]
+    public GameObject winPanel;       // Drag your Panel GameObject here
+    public Text winMovesText;         // Drag a Text object inside the panel to show score
+    public Button retryButton;        // Drag your Retry Button (Image) here
+    public Button menuButton;         // Drag your Menu Button (Image) here
+    public string menuSceneName = "MainMenu"; // Exact name of your menu scene
+
+    [Header("Visuals")]
+    public Material baseMaterial;
+
     [Header("Settings")]
     public float diskAmount = 4f;
     public float spawnInterval = 0.3f;
@@ -15,8 +27,7 @@ public class HanoiUltimate : MonoBehaviour
     public float poleWidth = 40f;
     public float poleHeight = 600f;
 
-    // Physics Config
-    private float floorY = -400f;
+    private float floorY = -435f;
     private float skySpawnHeight = 600f;
     private PhysicsMaterial slipperyMat;
 
@@ -29,8 +40,9 @@ public class HanoiUltimate : MonoBehaviour
     private bool isSpawning = false;
 
     // Internal
-    private List<Stack<GameObject>> poles; // Logic Stacks
-    private List<Vector3> polePositions;   // Pole Base Positions
+    private List<Stack<GameObject>> poles;
+    private List<Vector3> polePositions;
+    private List<GameObject> poleVisuals; // Track visual poles to hide them
 
     // Dragging
     private GameObject currentDisk;
@@ -39,14 +51,20 @@ public class HanoiUltimate : MonoBehaviour
 
     void Awake()
     {
-        // 1. Initialize Lists in Awake to ensure they are empty before anything else happens
+        Screen.orientation = ScreenOrientation.LandscapeLeft;
         poles = new List<Stack<GameObject>>();
         polePositions = new List<Vector3>();
+        poleVisuals = new List<GameObject>();
     }
 
     void Start()
     {
-        // 2. Physics Engine Overdrive (Prevents sinking)
+        // Setup UI
+        if (winPanel != null) winPanel.SetActive(false);
+        if (retryButton != null) retryButton.onClick.AddListener(ReloadScene);
+        if (menuButton != null) menuButton.onClick.AddListener(GoToMenu);
+
+        // Physics Setup
         Physics.gravity = new Vector3(0, -4000f, 0);
         Physics.defaultSolverIterations = 50;
         Physics.defaultSolverVelocityIterations = 50;
@@ -58,6 +76,20 @@ public class HanoiUltimate : MonoBehaviour
 
         StartCoroutine(SpawnSequence());
     }
+
+    // --- BUTTON FUNCTIONS ---
+    void ReloadScene()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    void GoToMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(menuSceneName);
+    }
+    // ------------------------
 
     void CreateSlipperyMaterial()
     {
@@ -72,27 +104,36 @@ public class HanoiUltimate : MonoBehaviour
     void SetupCamera()
     {
         Camera cam = Camera.main;
-        cam.orthographic = true;
-        cam.orthographicSize = 540f;
-        cam.transform.position = new Vector3(0, 0, -1000);
-        cam.transform.rotation = Quaternion.Euler(0, 0, 0);
-        cam.backgroundColor = new Color(0.1f, 0.1f, 0.1f);
+        if (cam != null)
+        {
+            cam.orthographic = true;
+            cam.orthographicSize = 540f;
+            cam.transform.position = new Vector3(0, 0, -1000);
+            cam.transform.rotation = Quaternion.Euler(0, 0, 0);
+            cam.backgroundColor = new Color(0.15f, 0.15f, 0.15f);
+        }
+
+        if (FindFirstObjectByType<Light>() == null)
+        {
+            GameObject lightGO = new GameObject("Directional Light");
+            Light light = lightGO.AddComponent<Light>();
+            light.type = LightType.Directional;
+            lightGO.transform.rotation = Quaternion.Euler(50, -30, 0);
+        }
     }
 
     void CreateWallsAndFloor()
     {
-        // FLOOR
         GameObject floor = GameObject.CreatePrimitive(PrimitiveType.Cube);
         floor.name = "Floor";
         floor.transform.position = new Vector3(0, floorY - 20f, 0);
         floor.transform.localScale = new Vector3(3000f, 40f, 3000f);
-        floor.GetComponent<Renderer>().material.color = new Color(0.2f, 0.2f, 0.2f);
+        ApplyMaterial(floor, new Color(0.2f, 0.2f, 0.2f));
         floor.GetComponent<Collider>().material = slipperyMat;
 
-        // CAGE WALLS
-        CreateWall(new Vector3(-1000f, 0, 0), new Vector3(50f, 2000f, 1000f)); // Left
-        CreateWall(new Vector3(1000f, 0, 0), new Vector3(50f, 2000f, 1000f));  // Right
-        CreateWall(new Vector3(0, 1200f, 0), new Vector3(2000f, 50f, 1000f));  // Ceiling
+        CreateWall(new Vector3(-1000f, 0, 0), new Vector3(50f, 2000f, 1000f));
+        CreateWall(new Vector3(1000f, 0, 0), new Vector3(50f, 2000f, 1000f));
+        CreateWall(new Vector3(0, 1200f, 0), new Vector3(2000f, 50f, 1000f));
     }
 
     void CreateWall(Vector3 pos, Vector3 size)
@@ -112,15 +153,17 @@ public class HanoiUltimate : MonoBehaviour
             Vector3 poleBasePos = new Vector3(xPos, floorY, 0);
             polePositions.Add(poleBasePos);
 
-            // Pole Visual
             GameObject pole = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
             pole.name = "Pole_" + i;
             pole.transform.position = poleBasePos + Vector3.up * (poleHeight / 2f);
             pole.transform.localScale = new Vector3(poleWidth, poleHeight / 2f, poleWidth);
-            pole.GetComponent<Renderer>().material.color = new Color(0.6f, 0.6f, 0.6f);
-            Destroy(pole.GetComponent<Collider>()); // No pole colliders
+            ApplyMaterial(pole, new Color(0.7f, 0.7f, 0.7f));
+            Destroy(pole.GetComponent<Collider>());
 
             poles.Add(new Stack<GameObject>());
+
+            // Add to visual list
+            poleVisuals.Add(pole);
         }
     }
 
@@ -129,7 +172,6 @@ public class HanoiUltimate : MonoBehaviour
         isSpawning = true;
         int count = Mathf.RoundToInt(diskAmount);
 
-        // Loop: Largest (count) -> Smallest (1)
         for (int i = count; i > 0; i--)
         {
             SpawnSingleDisk(i, count);
@@ -141,27 +183,18 @@ public class HanoiUltimate : MonoBehaviour
 
     void SpawnSingleDisk(int index, int totalCount)
     {
-        // 1. CALCULATE POSITION FIRST
-        // Explicitly calculate Pole 0 X coordinate (-poleGap)
-        // We do NOT use the list here to avoid any index errors.
         Vector3 strictSpawnPos = new Vector3(-poleGap, skySpawnHeight, 0);
 
-        // 2. CREATE OBJECT
         GameObject disk = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
         disk.name = "Disk_" + index;
-
-        // 3. IMMEDIATE TELEPORT (CRITICAL FIX)
-        // Move it to the correct position BEFORE adding Physics components.
-        // This prevents the "default spawn at 0,0,0" issue.
         disk.transform.position = strictSpawnPos;
 
-        // 4. Visuals
         float sizeRatio = (float)index / totalCount;
         float radius = poleWidth + 10f + (baseDiskRadius * sizeRatio);
         disk.transform.localScale = new Vector3(radius, diskHeight / 2f, radius);
-        disk.GetComponent<Renderer>().material.color = Color.HSVToRGB(sizeRatio * 0.15f, 1f, 1f);
 
-        // 5. Physics Setup
+        ApplyMaterial(disk, Color.HSVToRGB(sizeRatio * 0.15f, 0.9f, 0.9f));
+
         Destroy(disk.GetComponent<Collider>());
         BoxCollider boxCol = disk.AddComponent<BoxCollider>();
         boxCol.material = slipperyMat;
@@ -172,12 +205,27 @@ public class HanoiUltimate : MonoBehaviour
         rb.interpolation = RigidbodyInterpolation.Interpolate;
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
         rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
-
-        // Double check position in physics engine
         rb.position = strictSpawnPos;
 
-        // 6. Add to Logic
         poles[0].Push(disk);
+    }
+
+    void ApplyMaterial(GameObject obj, Color color)
+    {
+        Renderer rend = obj.GetComponent<Renderer>();
+
+        if (baseMaterial != null)
+        {
+            rend.material = new Material(baseMaterial);
+        }
+        else
+        {
+            Shader shader = Shader.Find("Unlit/Color");
+            if (shader == null) shader = Shader.Find("Mobile/Diffuse");
+            if (shader == null) shader = Shader.Find("Standard");
+            if (shader != null) rend.material = new Material(shader);
+        }
+        rend.material.color = color;
     }
 
     void Update()
@@ -191,12 +239,16 @@ public class HanoiUltimate : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) return;
+#if UNITY_ANDROID || UNITY_IOS
+            if (Input.touchCount > 0 && UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)) return;
+#endif
+
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit))
             {
-                // FILTER: Ignore walls/floors
                 if (!hit.collider.name.Contains("Disk")) return;
 
                 GameObject clickedObject = hit.collider.gameObject;
@@ -275,7 +327,7 @@ public class HanoiUltimate : MonoBehaviour
         if (alignedPos.y < stackHeight) alignedPos.y = stackHeight + 10f;
 
         disk.transform.position = alignedPos;
-        rb.position = alignedPos; // Sync physics immediately
+        rb.position = alignedPos;
 
         rb.isKinematic = false;
         rb.linearVelocity = Vector3.zero;
@@ -307,28 +359,97 @@ public class HanoiUltimate : MonoBehaviour
         return closest;
     }
 
+    public void GrantReward_InstantWin()
+    {
+        if (gameWon) return;
+        Debug.Log("Reward Granted: Instant Win!");
+        StopAllCoroutines();
+        isSpawning = false;
+        if (currentDisk != null)
+        {
+            currentDisk.GetComponent<Collider>().enabled = true;
+            currentDisk = null;
+        }
+
+        List<GameObject> allDisks = new List<GameObject>();
+        for (int i = 0; i < poles.Count; i++)
+        {
+            while (poles[i].Count > 0)
+            {
+                allDisks.Add(poles[i].Pop());
+            }
+        }
+        allDisks.Sort((a, b) => b.transform.localScale.x.CompareTo(a.transform.localScale.x));
+        StartCoroutine(StackDisksRoutine(allDisks));
+    }
+
+    IEnumerator StackDisksRoutine(List<GameObject> sortedDisks)
+    {
+        int targetPole = 2;
+        foreach (GameObject disk in sortedDisks)
+        {
+            Rigidbody rb = disk.GetComponent<Rigidbody>();
+            rb.linearVelocity = Vector3.zero;
+            DropDiskToPole(disk, targetPole);
+            yield return new WaitForFixedUpdate();
+        }
+        CheckWinCondition();
+    }
+
     void CheckWinCondition()
     {
-        if (poles[2].Count == diskAmount || poles[1].Count == diskAmount)
+        if (!gameWon && (poles[2].Count == diskAmount || poles[1].Count == diskAmount))
         {
             gameWon = true;
+            Debug.Log("YOU WIN!");
+
+            if (winPanel != null)
+            {
+                winPanel.SetActive(true);
+
+                // 1. HIDE THE MIDDLE POLE
+                //if (poleVisuals.Count > 1 && poleVisuals[1] != null)
+                //{
+                //    poleVisuals[1].SetActive(false);
+                //}
+
+                //// 2. NEW: HIDE ALL DISKS
+                //foreach (Stack<GameObject> stack in poles)
+                //{
+                //    foreach (GameObject disk in stack)
+                //    {
+                //        if (disk != null)
+                //        {
+                //            disk.SetActive(false);
+                //        }
+                //    }
+                //}
+
+                if (winMovesText != null)
+                {
+                    winMovesText.text = "Moves: " + moves;
+                }
+            }
         }
     }
 
     void OnGUI()
     {
-        GUIStyle style = new GUIStyle();
-        style.fontSize = 40;
-        style.normal.textColor = Color.white;
-
-        GUI.Label(new Rect(20, 20, 400, 100), "Moves: " + moves, style);
-
-        if (gameWon)
+        // Only show HUD if game is NOT won
+        if (!gameWon)
         {
-            style.fontSize = 80;
-            style.normal.textColor = Color.green;
-            style.alignment = TextAnchor.MiddleCenter;
-            GUI.Label(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 100, 400, 200), "YOU WIN!", style);
+            GUIStyle style = new GUIStyle();
+            style.fontSize = 40; // Size of the text
+            style.normal.textColor = Color.black; // Color of the text
+
+            // --- SETTINGS FOR POSITION ---
+            float paddingLeft = 50f; // Distance from the Left border
+            float paddingTop = 50f;  // Distance from the Top border
+            // -----------------------------
+
+            // Rect(X, Y, Width, Height)
+            // X = paddingLeft, Y = paddingTop
+            GUI.Label(new Rect(paddingLeft, paddingTop, 400, 100), "Moves: " + moves, style);
         }
     }
 }

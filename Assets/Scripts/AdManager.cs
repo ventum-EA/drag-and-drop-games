@@ -33,6 +33,7 @@ public class AdManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         adsInitializer.OnAdsInitialized += HandleAdsInitialized;
+        bannerAd.ShowBannerAd();
     }
 
     private void HandleAdsInitialized()
@@ -107,15 +108,33 @@ public class AdManager : MonoBehaviour
         {
             bannerAd.SetButton(bannerButton);
         }
+        if (scene.name == "CityScene")
+        {
+            bannerAd.HideBannerAd();
 
+        }
+        else
+        {
+            bannerAd.ShowBannerAd();
+        }
         if (!firstSceneLoad)
         {
             firstSceneLoad = true;
             Debug.Log("First time scene loaded!");
             return;
         }
-        if (rewardedAds.flayingObjectManager == null)
+        if (rewardedAds != null)
+        {
+            // Reset references first to avoid calling the wrong game's reward
+            rewardedAds.flayingObjectManager = null;
+            rewardedAds.hanoiGame = null;
+
+            // Try to find Flying Manager
             rewardedAds.flayingObjectManager = FindFirstObjectByType<FlyingObjectManager>();
+            
+            // Try to find Hanoi Manager
+            rewardedAds.hanoiGame = FindFirstObjectByType<HanoiUltimate>();
+        }
         Debug.Log("Scene loaded!");
         HandleAdsInitialized(); 
     }
